@@ -1,5 +1,5 @@
-function hello() {
+function helloWorld() {
 	document.getElementById("hello").innerHTML = "Hello, World!";
 }
 
-hello();
+helloWorld();
