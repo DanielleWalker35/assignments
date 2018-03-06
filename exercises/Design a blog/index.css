@@ -1,0 +1,35 @@
+.nav {
+    background-color: rgb(42, 230, 164);
+    font-size: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+    z-index: 5;
+}
+.blog {
+    position: absolute;
+}
+.post {
+    margin: 10px auto;
+    width: 80%;
+}
+
+.date {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+h2 {
+    margin-bottom: 2px;
+}
+.textWrap {
+    float: left;
+    margin-right: 10px;
+    
+}
+.textWrapRight {
+    float: right;
+    margin-left: 10px;
+}
