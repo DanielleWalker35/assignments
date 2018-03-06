@@ -1,0 +1,297 @@
+* {
+    /* margin: 0; */
+    /* box-sizing: border-box; */
+    font-size: 0px;
+}
+
+p {
+    font-size: 24px;
+}
+
+.flag {
+    border: black solid 2px;
+    height: 200px;
+    width: 300px;
+}
+
+.col {
+    height: 100%;
+    display: inline-block;
+}
+
+.blue {
+    background-color: blue;
+    width: 33.3%;
+}
+
+.white {
+    background-color: white;
+    width: 33.3%;
+}
+
+.red {
+    background-color: red;
+    width: 33.3%;
+}
+
+.row {
+    width: 100%;
+}
+
+.black {
+    background-color: black;
+    height: 33.3%;
+}
+
+.germRed {
+    background-color: #ff0000;
+    height: 33.3%;
+}
+
+.yellow {
+    background-color: #ffff00;
+    height: 33.3%;
+}
+
+.madRow {
+    height: 50%;
+}
+
+.madCol {
+    height: 100%;
+    display: inline-block;
+}
+
+.madWhite {
+    background-color: white;
+    width: 33.3%;
+}
+
+.madRed {
+    background-color: red;
+    width: 66.6%;
+}
+
+.madGreen {
+    background-color: green;
+    width: 66.6%;
+}
+
+.Switzerland {
+    height: 300px;
+    width: 300px;
+}
+
+.swissRow {
+    height: 20%;
+    width: 100%;
+    display: inline-block;
+}
+
+.swissCol {
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+}
+
+.swissRed {
+    background-color: red;
+}
+
+.swissWhite {
+    background-color: white;
+}
+
+.Sweden {
+    background-color: #006BA8;
+    position: relative;
+}
+
+.yellowRow {
+    background-color: #FECD01;
+    height: 20%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.yellowCol {
+    background-color: #FECD01;
+    height: 100%;
+    width: 13%;
+    position: absolute;
+    left: 35%;
+    transform: translateX(-50%);
+}
+
+.gambRow {
+    height: 33.3%;
+    width: 100%;
+}
+
+.gambRed {
+    background-color: #CE1126;
+}
+
+.gambBlue {
+    height: 23.5%;
+    background-color: #0C1C8C;
+    border-bottom: white solid 10px;
+    border-top: white solid 10px;
+}
+
+.gambGreen {
+    background-color: #3A7728;
+}
+
+.Tonga {
+    width: 400px;
+    background-color: #c8102e;
+}
+
+.tongaWhite {
+    background-color: white;
+    width: 45%;
+    height: 50%;
+    position: relative;
+}
+
+.cross {
+    background-color: #c8102e;
+    position: absolute;
+}
+
+.tongaRow {
+    width: 40%;
+    height: 23%;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.tongaCol {
+    width: 13%;
+    height: 70%;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.Japan {
+    background-color: white;
+    position: relative;
+}
+
+.circle {
+    height: 65%;
+    width: 45%;
+    background-color: #BC002D;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.Greece {
+    background-color: #0D5EAF;
+    position: relative;
+}
+
+.box {
+    position: absolute;
+    width: 40%;
+    height: 55.5%;
+    background-color: white;
+    z-index: 2;
+}
+
+.greeceRow {
+    height: 11.11%;
+}
+
+.greeceWhite {
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.blueBox {
+    background-color: #0D5EAF;
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    z-index: 3;
+}
+
+.topLeft {}
+
+.topRight {
+    right: 0;
+}
+
+.bottomRight {
+    right: 0;
+    bottom: 0;
+}
+
+.bottomLeft {
+    bottom: 0;
+}
+
+.nigerRow {
+    width: 100%;
+    height: 33.3%;
+}
+
+.nigerOrange {
+    background-color: #E05206;
+}
+
+.nigerWhite {
+    background-color: white;
+    position: relative;
+}
+
+.nigerGreen {
+    background-color: #0DB02B;
+}
+
+.nigerCircle {
+    height: 85%;
+    width: 20%;
+    background-color: #E05206;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.Maldives {
+    background-color: #D21034;
+    position: relative;
+}
+
+.greenBox {
+    background-color: #007E3A;
+    width: 65%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.whiteMoon {
+    background-color: #007E3A;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: -12px 0px 0 0 white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-20%);
+}
