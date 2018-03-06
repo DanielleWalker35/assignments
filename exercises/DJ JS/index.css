@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    width: 100vh;
+}
+
+.square {
+    background-color: pink;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    margin: 50vh;
+ } 
+
