@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1>Walker Airlines!</h1>
+    <h2>"Why Walk When You Can Fly"</h2>
+    <form id="submit" name="login">
+        <input type="text" name="firstName" placeholder="First Name">
+        <input type="text" name="lastName" placeholder="Last Name">
+        <input type="number" name="age" placeholder="Age">
+        <!-- checkbox -->
+        <h3>Dietary Restrictions</h3>
+        <label for="vegetarian">Vegetarian:
+            <input type="checkbox" name="vegetarian">
+        </label>
+        <label for="kosher">Kosher:
+            <input type="checkbox" name="kosher">
+        </label>
+        <label for="gluten">Gluten Free:
+            <input type="checkbox" name="glutenFree">
+        </label>
+        <!-- radio -->
+        <h3>Gender</h3>
+        <label for="genderM">Male
+            <input name="Male" id="genderM" type="radio">
+        </label>
+        <label for="genderF">Female
+            <input name="Female" id="genderF" type="radio">
+        </label>
+        <!-- select -->
+        <h3>Traveling to...</h3>
+        <select name="location" id="color" value="none">
+            <option value="none">Pick a Locaiton</option>
+            <option value="Virginia">Virginia</option>
+            <option value="NewYork">New York</option>
+            <option value="France">France</option>
+            <option value="Greece">Greece</option>
+            <option value="Japan">Japan</option>
+            <option value="Madrid">Madrid</option>
+        </select>
+        <button>Submit</button>
+        <p id="output"></p>
+    </form>
+    <script src="index.js"></script>
+</body>
+
+</html>
