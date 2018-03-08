@@ -27,12 +27,12 @@ h2 {
     height: 150px;
     display: inline-block;
 }
-.last {
-    width: 100%;
+/* .last { */
+    /* width: 100%;
     border: 10px solid white;
     height: 150px;
-    display: inline-block;
-}
+    display: inline-block; */
+/* } */
 
 h3 {
     background-color: #8DC63F;
@@ -40,7 +40,7 @@ h3 {
     border: 10px solid white;
     height: 150px;
     display: inline-block;
-    
+   
 }
 
 h4 {
@@ -55,4 +55,24 @@ h4 {
 .project {
    width: 60%;
 
+}
+@media (max-width: 768px) {
+    h1 {
+        width: 100%
+    }
+    p {
+        width: 100%
+    }
+    h2 {
+        width: 100%
+    }
+    h3 {
+        width: 100%
+    }
+    h4 {
+        width: 100%
+    }
+    .project {
+        width: 100%
+    }
 }
