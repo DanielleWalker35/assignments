@@ -26,6 +26,7 @@ li {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .cost {
@@ -34,6 +35,8 @@ li {
     /* margin-right: 65px;
     float: right; */
     border: black solid 3px;
+    font-size: 100%;
+    text-align: center;
 }
 
 .totalParent {
@@ -48,21 +51,31 @@ li {
 
 .total {
     float: right;
-    margin-right: 20vh;
-    height: 20vh;
-    width: 40vh;
+    margin-right: 20%;
+    height: 100%;
+    width: 100%;
     border: black dashed 5px;
-    font-size: 100%;
+    font-size: 150%;
 }
 
 .total-price {
     font-size: 24px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    float: right;
+    margin-left: 23%;
+}
+.totalWords {
+    font-size: 24px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 20%;
 }
 
 footer {
     display: flex;
     justify-content: space-around;
     margin-top: 10%;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 775px) {
+
 }
