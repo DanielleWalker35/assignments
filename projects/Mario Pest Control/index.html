@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,49 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
-<!-- Large Title "Mario Pest Control" -->
-<!-- need ul -->
-<!-- each list item needs - name, img, price, input box -->
-<!-- need total box for total of baddies caught -->
-<!-- footer with mario - email, website, address -->
 
-    
+<body>
+    <!-- Large Title "Mario Pest Control" -->
+    <h1>Mario Pest Control</h1>
+    <!-- need ul -->
+    <!-- each list item needs - name, img, price, input box -->
+    <form class="baddiesPricing" name="pricing">
+        <ul>
+            <li class="baddies" name="Goombas">
+                <img src="Goomba.png" alt="picture of a goomba" class="baddiePics">
+                <p class="baddietext">Goombas 5 coins</p>
+                <input class="cost" type="number" id="goombaNumber">
+            </li>
+            <li class="baddies" name="Bob-ombs">
+                <img src="Bob-omb.jpg" alt="picture of a bob-omb" class="baddiePics">
+                <p class="baddietext">Bob-ombs 7 coins</p>
+                <input class="cost" type="number" id="bobombNumber">
+            </li>
+            <li class="baddies" name="Cheep-cheeps">
+                <img src="cheepcheep.jpg" alt="picture of a cheep-cheep" class="baddiePics">
+                <p class="baddietext">Cheep-cheeps 11 coins</p>
+                <input class="cost" type="number" id="cheepcheepNumber">
+            </li>
+        </ul>
+        <!-- need total box for total of baddies caught -->
+        <div class = "totalParent">
+            <div class="totalStuff">
+                <button class="total" name="get-total" type="submit">Get Cost</button>
+                <p> Total:</p>
+                <div class="total-price" id="totalPrice">
+                </div>
+                
+            </div>
+        </div>
+    </form>
+    <!-- footer with mario - email, website, address -->
+    <footer>
+        <p>Mario@MarioIsAwesome.com</p>
+        <p>MarioIsAwesome.com</p>
+        <p>257 Get Baddies Blvd. Lehi, UT 84043</p>
+    </footer>
+
     <script src="index.js"></script>
 </body>
+
 </html>
