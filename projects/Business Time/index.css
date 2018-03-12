@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    /* border: black 1px solid; */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 300vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    flex: .30;
+    background-color: rgb(115, 198, 247);
+    justify-content: center;
+    font-family: "Coiny", cursive;
+    flex-wrap: wrap;
+    border: black solid 4px;
+}
+
+h1 {
+    font-size: 400%;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    text-align: center;
+    flex: .15;
+    font-family: "Coiny", cursive;
+    background-color: white;
+}
+
+.navBar {
+    padding-top: 6px;
+    font-size: 200%;
+}
+
+.heading {
+    flex: .70;
+    /* .cowPics {
+    flex: .25; */
+    display: flex;
+}
+
+.cowField {
+    flex: 1;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+}
+
+.information {
+    flex: .75;
+    font-family: "Coiny", cursive;
+    color: black;
+    background-color: white;
+    /* border: black solid 2px; */
+    z-index: 3;
+    padding: 5%;
+}
+
+p {
+    text-align: center;
+    font-family: "Coiny", cursive;
+}
+
+.bottomPics {
+    flex: .50;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.milk {
+    flex: .20;
+    object-fit: contain;
+    display: block;
+    width: auto;
+    height: 100%;
+}
+
+.yogurt {
+    flex: .40;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.butter {
+    flex: .40;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    width: auto;
+}
+
+footer {
+    flex: .60;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 200%;
+}
+
+.socialMediaIcons {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.socialMedia {
+    height: 70px;
+    width: auto;
+}
+button {
+    border: none;
+    outline: none;
+}
+.heading2{
+    display: flex;
+    flex: .35;
+    flex-direction: column;
+    justify-content: center;
+}
+.cowPics{
+    flex: .60;
+    display: flex;
+    justify-content: space-around;
+    padding: 2%;
+}
+.gertie {
+    object-fit: contain;
+    height: 100%;
+    width: auto;
+}
+.molly {
+    object-fit: contain;
+    height: 100%;
+    width: auto;
+}
+.bessie {
+    object-fit: contain;
+    height: 100%;
+    width: auto;
+}
+.clarabell {
+    object-fit: contain;
+    height: 100%;
+    width: auto;
+}
