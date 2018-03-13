@@ -3,155 +3,194 @@
     margin: 0;
     /* border: black 1px solid; */
 }
-
+@font-face {
+    font-family: Ubuntu-Regular;
+    src: url(Ubuntu-Regular.ttf);
+}
+body {
+    background-color: rgb(43, 122, 250);
+}
 .wrapper {
+    margin: auto;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    height: 300vh;
+    height: 200vh;
+    font-family: "Ubuntu-Regular";
+    background-color: white;
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    flex: .30;
-    background-color: rgb(115, 198, 247);
-    justify-content: center;
-    font-family: "Coiny", cursive;
-    flex-wrap: wrap;
-    border: black solid 4px;
-}
-
-h1 {
-    font-size: 400%;
+    flex: .15;
     text-align: center;
+    font-size: 70px;
+    padding-top: 3%;
+    /* background-color: rgb(249, 253, 192); */
 }
 
 nav {
     display: flex;
-    justify-content: center;
-    justify-content: space-around;
+    flex-direction: column;
     text-align: center;
-    flex: .15;
-    font-family: "Coiny", cursive;
-    background-color: white;
 }
 
-.navBar {
-    padding-top: 6px;
-    font-size: 200%;
-}
-
-.heading {
-    flex: .70;
-    /* .cowPics {
-    flex: .25; */
-    display: flex;
-}
-
-.cowField {
-    flex: 1;
-    height: auto;
-    width: 100%;
-    object-fit: contain;
-}
-
-.information {
-    flex: .75;
-    font-family: "Coiny", cursive;
-    color: black;
-    background-color: white;
-    /* border: black solid 2px; */
-    z-index: 3;
-    padding: 5%;
-}
-
-p {
-    text-align: center;
-    font-family: "Coiny", cursive;
+a {
+    font-size: 20px;
+    background-color: rgb(21, 148, 21);
+    /* border: 1px solid black; */
 }
 
 .bottomPics {
-    flex: .50;
+    flex: .30;
     display: flex;
-    justify-content: space-around;
-
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
-.milk {
-    flex: .20;
-    object-fit: contain;
-    display: block;
-    width: auto;
-    height: 100%;
+.products {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50%;
+}
+
+@media (min-width: 700px) {
+    nav {
+        flex-direction: row;
+    }
+    a {
+        width: 50%;
+    }
+}
+
+.heading {
+    flex: .60;
+    background-image: url(cowlayingdown.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 600px) {
+    .information {
+        flex: content;
+       }
+       .heading2{
+           flex: content;
+       }
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3%;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 18px;
+}
+
+.cheese {
+    background-image: url(cheese.jpg);
 }
 
 .yogurt {
-    flex: .40;
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-    display: block;
+    background-image: url(yogurt.jpg);
 }
 
 .butter {
-    flex: .40;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    width: auto;
+    background-image: url(butter.jpg);
+}
+
+@media (min-width: 400px) {
+    .products {
+        flex: .30;
+    }
 }
 
 footer {
-    flex: .60;
+    flex: .20;
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
-    font-size: 200%;
+    padding: 1.5%;
 }
 
-.socialMediaIcons {
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
+.footerText {
+    font-size: 150%;
+    padding-top: 3.5%;
 }
 
-.socialMedia {
-    height: 70px;
-    width: auto;
-}
 button {
-    border: none;
-    outline: none;
+    flex: .15;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
+    border-style: none;
 }
-.heading2{
+
+.button1 {
+    background-image: url(facebook.svg);
+}
+
+.button2 {
+    background-image: url(instagramIcon.svg);
+}
+
+.button3 {
+    background-image: url(twitter.png);
+}
+.heading2 {
+    font-size: 250%;
+    text-align: center;
+    margin: 2%;
+}
+.cowName {
+    font-size: 100%;
+    padding-left: 5%;
+}
+.cows {
+    flex: 1.05;
     display: flex;
-    flex: .35;
     flex-direction: column;
-    justify-content: center;
+    margin: 2%;
 }
-.cowPics{
-    flex: .60;
-    display: flex;
-    justify-content: space-around;
-    padding: 2%;
+
+.cowPics {
+    flex: .75;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
 }
+
 .gertie {
-    object-fit: contain;
-    height: 100%;
-    width: auto;
+    background-image: url(gertie.jpg);
 }
+
 .molly {
-    object-fit: contain;
-    height: 100%;
-    width: auto;
+    background-image: url(molly.jpg);
 }
+
 .bessie {
-    object-fit: contain;
-    height: 100%;
-    width: auto;
+    background-image: url(bessie.jpg);
 }
+
 .clarabell {
-    object-fit: contain;
-    height: 100%;
-    width: auto;
+    background-image: url(clarabell.jpg);
+}
+
+.productInfo{
+    font-size: 150%;
+}
+.milk {
+    background-image: url(milk.jpg);
+    flex: .55;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
