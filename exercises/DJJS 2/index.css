@@ -1,0 +1,112 @@
+.sixBoxes {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.boxes {
+    width: 175px;
+    height: 175px;
+    border: 1px solid black;
+    border-radius: 5%;
+    box-shadow: 10px 10px 5px #999;
+    margin: 2%;
+    background-color: blueviolet;
+}
+
+.box1 {
+    /* 4 transition properties */
+    transition-property: border-radius, box-shadow, background-color, width;
+    transition-duration: 3s;
+    transition-timing-function: ease-in;
+    transition-delay: .3s;
+
+    /* condensed transition property */
+    /* transition: you can do all of the choices just by selecting this. */
+}
+
+.box1:hover {
+    box-shadow: none;
+    border-radius: 0;
+    background-color: blue;
+    width: 300px;
+}
+
+.box2 {
+    /* background-color: rgb(77, 241, 48); */
+    transition-property: box-shadow, background-color, height;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: .3s;
+}
+
+.box2:hover {
+    box-shadow: 10px 10px 5px  blue;
+    background-color: black;
+    height: 75%;
+}
+
+.box3 {
+    background-color: blueviolet;
+    /* 4 transition properties */
+    transition-property: border-radius, box-shadow, background-color;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    transition-delay: .3s;
+}
+
+.box3:hover {
+    border-radius: 20%;
+    box-shadow: none;
+    background-color: deeppink;
+}
+
+.box4 {
+    background-color: blueviolet;
+    /* 4 transition properties */
+    transition-property: border-radius, background-color, height;
+    transition-duration: 3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: .3s;
+}
+
+.box4:hover {
+    border-radius: 30%;
+    background-color: rgb(255, 115, 0);
+    height: 50px;
+}
+
+.box5 {
+    background-color: blueviolet;
+    /* 4 transition properties */
+    transition-property: border, box-shadow, background-color, width;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-delay: .3s;
+}
+
+.box5:hover {
+    border: 5px dotted blue;
+    box-shadow: 10px 10px 5px orange;
+    width: 60px;
+    background-color: yellow;
+
+}
+
+.box6 {
+    background-color: blueviolet;
+    /* 4 transition properties */
+    transition-property: border-radius, background-color, padding;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    transition-delay: .3s;
+    text-align: center;
+}
+
+.box6:hover {
+    padding-top: 10%;
+    border-radius: 60px 10px;
+    background-color: white;
+}
