@@ -4,12 +4,12 @@ function Employee(name, title, salary, status = "Full Time") {
     this.name = name;
     this.title = title;
     this.salary = salary;
-    this.status = status;
-    this.printEmployeeForm = function (){
-        console.log("Name: " + this.name + ", Job Title: " + this.title + ", Salary: " + this.salary + ", Status: " + this.status);
-        }
-
+    this.status = status; 
 };
+
+Employee.prototype.printEmployeeForm = function (){
+    console.log("Name: " + this.name + ", Job Title: " + this.title + ", Salary: " + this.salary + ", Status: " + this.status);
+    };
 
 var bob = new Employee("Bob", "Boss", "100k",);
 var joe = new Employee("Joe", "Assistant", "30k", "Contract");
