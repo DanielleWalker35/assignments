@@ -16,9 +16,9 @@ var playTheGame = function () {
             var n = new Enemy(name, hitPoints);
             enemies.push(n);
         }
-        addEnemy("Crazy Eyes", 100);
-        addEnemy("Slimy Dude", 120);
-        addEnemy("Yuck Face", 135);
+        addEnemy("Crazy Eyes", 30);
+        addEnemy("Slimy Dude", 15);
+        addEnemy("Yuck Face", 10);
         //if wild enemy appears - randomly select a number between 1-3 that represents one of three enemies
         var getEnemy = enemies[Math.floor(Math.random() * enemies.length)];
 
@@ -69,7 +69,7 @@ var playTheGame = function () {
                 case 0:
                     var attackPower = Math.floor(Math.random() * 20 + 10);
                     console.log("Your attack power is " + attackPower + ". You did some serious damage.");
-                    //ask would you like to attack again Y/N
+//did you kill the enemy. or did he get away.
                     // option = false;
                     break;
                 case 1:
