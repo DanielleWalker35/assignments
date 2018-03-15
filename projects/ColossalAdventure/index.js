@@ -44,9 +44,9 @@ var playTheGame = function () {
                 var enemy = getEnemy;
                 console.log(enemy);
                 toFight = rs.keyInSelect(options, "What do you want to do now?");
-                console.log("So you want to " + options[toFight]);
+                console.log("So you want to " + options[toFight]);//here I need to call the fight function
 
-                isWalk = false;
+                // isWalk = false;
                 break;
             case 2:
                 // console.log("Safe for now keep walking");
@@ -64,7 +64,7 @@ var playTheGame = function () {
 
     }
     var myInventory = [];
-    var inventory = ["gold bar", "trophy", "rare gem", "silver", ];
+    var inventory = ["a gold bar", "a trophy", "a rare gem", "silver coins", ];
     var getItem = inventory[Math.floor(Math.random() * inventory.length)];
     // while (option) {
     switch (toFight) {
@@ -76,9 +76,12 @@ var playTheGame = function () {
                 console.log("Great Job you killed him!");
                 //add item to my inventory and increase hitpoints
                 myInventory.push(getItem);
-                console.log("Awesome! Your inventory now contains: " + myInventory);
+                hitPoints();
+                console.log("Awesome! You gained 20 hit points and your inventory now contains: " + myInventory);
+                //need to go back to walking
             } else {
-                console.log("Shoot you hurt him but he is not dead yet.")
+                console.log("Shoot you hurt him but he is not dead yet.");
+
             }
             // option = false;
             break;
@@ -95,18 +98,25 @@ var playTheGame = function () {
     };
     // };
 
-
+function hitPoints(){
+    var player = {
+        name: playerName,
+        hp: 100,
+        // attack: undefined,
+        enemiesKilled: 0,
+        inventory: myInventory,
+    }
+    player.hp += 20;
+    player.enemiesKilled++;
+    console.log(player);
+}
 
     //if attack - 
 
 
-    //while loop continues as long as my hp is >1 or my winCon is not met
-    // var player = {
-    //     name: playerName,
-    //     hp: 100,
-    //     attack: undefined,
-    //     enemiesKilled: 0,
-    // }
+    // while loop continues as long as my hp is >1 or my winCon is not met
+    
+    
     // var Enemy = function() {
     //     this.attack = Math.floor(Math.random() * 20) + 10;
     //     this.hp = 50;
