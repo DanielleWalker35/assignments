@@ -1,0 +1,64 @@
+{
+	"appetizers": [{
+		"name": "spinach dip",
+		"ingredients": ["spinach", "creamcheese", "artichokes"],
+		"description": "tastey dip filled with spinach, cheese and artichokes"
+	}, {
+		"name": "buffalo wings",
+		"ingredients": ["chicken", "hot sauce", "butter"],
+		"description": "try our amazingly spicey buffalo wings!"
+	}, {
+		"name": "veggie platter",
+		"ingredients": ["cucumbers", "carrots", "dip"],
+		"description": "assorted veggies with a delicious ranch dip"
+	}],
+	"cold sandwiches": [{
+		"name": "meat",
+		"ingredients": ["turkey", "ham", "roast beef"],
+		"description": "try our meat filled sandwich"
+	}, {
+		"name": "veggie",
+		"ingredients": ["hummus", "lettuce", "roasted peppers"],
+		"description": "a delicious hummus sandwhich filled with veggies"
+	}, {
+		"name": "chicken",
+		"ingredients": ["chicken", "lettuce", "bread"],
+		"description": "yummy chicken sandwich on a homemade roll"
+	}],
+	"hot sandwiches": [{
+		"name": "french dip",
+		"ingredients": ["roast beef", "provalone", "bread"],
+		"description": "warm french dip sandwich with dipd"
+	}, {
+		"name": "grilled cheese",
+		"ingredients": ["cheese", "bread", "butter"],
+		"description": "the best comfort food out there"
+	}, {
+		"name": "tuna melt",
+		"ingredients": ["tuna fish", "bread", "swiss cheese"],
+		"description": "who orders a tuna melt choose again"
+
+	}],
+	"desserts": [{
+		"name": "pie",
+		"ingredients": ["cherries", "pie crust", "whipped cream"],
+		"description": "the perfect cherry pie"
+	}, {
+		"name": "ice cream",
+		"ingredients": ["cream", "sugar", "vanilla"],
+		"description": "cool off with ice cream"
+	}, {
+		"name": "cake",
+		"ingredients": ["flour", "frosting", "sprinkles"],
+		"description": "the best cake in town"
+	}],
+	"drinks": [{
+		"name": "coke",
+		"ingredients": ["soda syrup", "carbonated water", "straw"],
+		"description": "nothing is more refreshing than a coke"
+	}, {
+		"name": "pinacolada",
+		"ingredients": ["pinapple", "coconut", "ice"],
+		"description": "the best drink around"
+	}]
+}
