@@ -216,7 +216,7 @@ var voters = [{
 ];
 
 
-function findVoters(total, num) {
+function findVoters(arr) {
     var totalVoters = {
         youngVotes: 0,
         youth: 0,
@@ -225,26 +225,47 @@ function findVoters(total, num) {
         oldVotes: 0,
         olds: 0
     };
-    switch (num) {
-        case num.age <= 25:
-            num.youth++
-            break;
-        case num.age > 25 && num.age <= 35:
-            mids = total + num.voted;
-            break;
-        case num.age > 35:
-            olds = total + num.voted;
-            break;
-
-    }
+    totalVoters.youth = arr.reduce(function(count, elem){
+        if (elem.age >= 18 && elem.age <= 25) {
+            count++;
+        }
+        return count;
+    }, 0);
+    totalVoters.mids = arr.reduce(function(count, elem){
+        if (elem.age >25 && elem.age <= 35) {
+            count++;
+        }
+        return count;
+    }, 0);
+    totalVoters.olds = arr.reduce(function(count, elem){
+        if (elem.age > 35 && elem.age <= 55) {
+            count++;
+        }
+        return count;
+    }, 0);
+    totalVoters.youngVotes = arr.reduce(function(count, elem){
+        if ((elem.age >= 18 && elem.age <= 25) && elem.voted) {
+            count++;
+        }
+        return count;
+    }, 0);
+    totalVoters.midVotes = arr.reduce(function(count, elem){
+        if ((elem.age >25 && elem.age <= 35) && elem.voted) {
+            count++;
+        }
+        return count;
+    }, 0);
+    totalVoters.oldVotes = arr.reduce(function(count, elem){
+        if ((elem.age > 35 && elem.age <= 55) && elem.voted) {
+            count++;
+        }
+        return count;
+    }, 0);
     return totalVoters;
-}
+};
+    
 
-function voterResults(arr) {
-    return arr.reduce(findVoters, 0);
-}
-
-console.log(voterResults(voters)) // Returned value shown below:  
+console.log(findVoters(voters)); // Returned value shown below:  
 /*
 { youngVotes: 1,
   youth: 4,
