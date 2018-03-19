@@ -9,10 +9,10 @@ var playTheGame = function () {
     var Enemy = function (name, hitPoints) {
         this.name = name;
         this.hitPoints = hitPoints;
-        this.attack = Math.floor(Math.random() * 20) + 10;
+        this.attack = Math.floor(Math.random() * 30) + 10;
     }
     var fight = false;
-
+var isWalk = false;
     function addEnemy(name, hitPoints) {
         var n = new Enemy(name, hitPoints);
         enemies.push(n);
@@ -22,23 +22,35 @@ var playTheGame = function () {
     addEnemy("Yuck Face", 30);
     addEnemy("Gross Monster", 25);
     addEnemy("Scary Monster", 43);
-
+ 
     //create a function to ask the user to attack or run
     var options = ["Attack", "Run"];
     var inventory = ["a gold bar", "a trophy", "a rare gem", "silver coins", ];
     var player = {
         name: playerName,
-        hitPoints: 100,
+        hitPoints: 70,
         enemiesKilled: 0,
         inventory: [],
     }
     while (player.hitPoints > 0 && player.enemiesKilled < 3) {
+        // while (true) {
+        //     command = readlineSync.prompt("Type print to see your stats!");
+        //     console.log(player);
+        //   }
         //if wild enemy appears - randomly select a number between 1-3 that represents one of three enemies
-        var getEnemy = enemies[Math.floor(Math.random() * enemies.length)];
         //ask the user to press w to move forward
-        var isWalk = rs.keyIn("Press 'w' to walk!\n", {
-            limit: 'w'
+        var walkPrint = rs.keyIn("Press 'w' to walk or 'p' to print your stats!\n", {
+            limit: 'wp'
         });
+
+        
+        if (walkPrint === 'p'){
+            console.log(player);
+        };
+
+        if (walkPrint === 'w'){
+            isWalk = true;
+        }
         //each time they push w randomly select a number between 1-3 to see if attacked
         while (isWalk) {
             //generate a number between 1-3
@@ -47,6 +59,7 @@ var playTheGame = function () {
             switch (isAttacked) {
                 case 1:
                     console.log("Oh no a monster!!!");
+                    var getEnemy = enemies[Math.floor(Math.random() * enemies.length)];
                     var currentEnemy = getEnemy;
                     console.log(currentEnemy);
                     toFight = rs.keyInSelect(options, "What do you want to do now?");
@@ -60,14 +73,14 @@ var playTheGame = function () {
                     break;
                 case 2:
                     // console.log("Safe for now keep walking");
-                    isWalk = rs.keyIn("Safe for now, press 'w' to walk again!\n", {
-                        limit: 'w'
+                    walkPrint = rs.keyIn("Press 'w' to walk or 'p' to print your stats!\n", {
+                        limit: 'wp'
                     });
                     break;
                 case 3:
-                    isWalk = rs.keyIn("safe for now, press 'w' to walk again!\n", {
-                        limit: 'w'
-                    });
+                walkPrint = rs.keyIn("Press 'w' to walk or 'p' to print your stats!\n", {
+                    limit: 'wp'
+                });
                     break;
             }
 
@@ -86,14 +99,16 @@ var playTheGame = function () {
             hitPoints();
             console.log("Awesome! You gained 20 hit points and your inventory now contains: " + player.inventory);
             console.log(player);
+            // currentEnemy = getEnemy;
             //need to go back to walking
         }
 
         function running() {
             var run = Math.floor(Math.random() * 2 + 1);
-            console.log(run);
+            // console.log(run);
             if (run === 1) {
                 console.log("Whew, that was close you got away this time.")
+                currentEnemy = getEnemy;
             } else if (run === 2) {
                 console.log("Oh no you didn't quite escape. Now you must fight.");
                 fight = true;
@@ -108,6 +123,7 @@ var playTheGame = function () {
             //did you kill the enemy. or did he get away.
             if (attackPower > currentEnemy.hitPoints) {
                 win();
+                currentEnemy = getEnemy;
                 fight = false;
             } else {
                 //enemy takes damage
@@ -129,5 +145,10 @@ var playTheGame = function () {
             };
         };
     };
+    if (player.enemiesKilled >= 3) {
+    console.log("You have just won the most amazing game in the universe!")
+    } else {
+        console.log("It hurts to lose but I am here for you.")
+    }
 }
 playTheGame();
