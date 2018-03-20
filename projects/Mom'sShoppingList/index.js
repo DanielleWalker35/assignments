@@ -3,15 +3,17 @@ var groceryList = document.getElementById("shoppingList");
 var input = groceryList.groceries;
 var items = document.getElementById("items");
 //creating my boxes and place for my entries
-var data = [];
+var data = JSON.parse(localStorage.getItem("data")) || [];
 console.log(data);
-// input.addEventListener("input", function (event) {
-//     data.push(event.target.value);
-// })
-
-
-function addToList(event) {
-    event.preventDefault();
+function displayData (){
+    for (var i = 0; i< data.length; i++){
+        input.value = data[i];
+        create();
+        input.value = "";
+    }
+}
+displayData();
+function create() {
     var listItem = document.createElement("li");
     listItem.id = input.value;
     var button = document.createElement("button");
@@ -22,14 +24,20 @@ function addToList(event) {
     listItem.appendChild(span);
     items.appendChild(listItem);
     span.innerHTML = input.value;
-    input.value = "";
-    data.push(input.value);
-    localStorage.setItem("data", JSON.stringify(data));
-    console.log(JSON.parse(localStorage.getItem("data")));
     button.addEventListener('click', function (event) {
         items.removeChild(listItem);
+        data.splice(data.indexOf(input.value),1);
+        localStorage.setItem("data", JSON.stringify(data));
     });
+}
 
+function addToList(event) {
+    event.preventDefault();
+    create();
+    data.push(input.value);
+    input.value = "";
+    localStorage.setItem("data", JSON.stringify(data));
+    console.log(JSON.parse(localStorage.getItem("data")));
 };
 
 groceryList.addEventListener("submit", addToList);
