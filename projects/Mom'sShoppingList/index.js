@@ -4,7 +4,7 @@ var input = groceryList.groceries;
 var items = document.getElementById("items");
 //creating my boxes and place for my entries
 var data = [];
-
+console.log(data);
 // input.addEventListener("input", function (event) {
 //     data.push(event.target.value);
 // })
@@ -22,13 +22,14 @@ function addToList(event) {
     listItem.appendChild(span);
     items.appendChild(listItem);
     span.innerHTML = input.value;
-    data.push(input.value);
     input.value = "";
+    data.push(input.value);
     localStorage.setItem("data", JSON.stringify(data));
     console.log(JSON.parse(localStorage.getItem("data")));
     button.addEventListener('click', function (event) {
         items.removeChild(listItem);
-    })
-}
+    });
+
+};
 
 groceryList.addEventListener("submit", addToList);
