@@ -1,8 +1,8 @@
 var rs = require("readline-sync");
 
 var playTheGame = function () {
-    console.log("Hi-dee Ho, Neighbor!");
-    var playerName = rs.question("What is your name? ");
+    console.log("Hello, welcome to the worst day of your life!  You are walking through a haunted forest that is filled with ghosts. I hope to see you on the other side.");
+    var playerName = rs.question("Before you take your first steps into terror why don't you tell me your name? ");
 
     //create an array of enemies
     var enemies = [];
@@ -28,7 +28,7 @@ var isWalk = false;
     var inventory = ["a gold bar", "a trophy", "a rare gem", "silver coins", ];
     var player = {
         name: playerName,
-        hitPoints: 70,
+        hitPoints: 80,
         enemiesKilled: 0,
         inventory: [],
     }
@@ -39,11 +39,9 @@ var isWalk = false;
         //   }
         //if wild enemy appears - randomly select a number between 1-3 that represents one of three enemies
         //ask the user to press w to move forward
-        var walkPrint = rs.keyIn("Press 'w' to walk or 'p' to print your stats!\n", {
+        var walkPrint = rs.keyIn("Lets take some steps in the forest. Press 'w' to walk or 'p' to print your stats!\n", {
             limit: 'wp'
         });
-
-        
         if (walkPrint === 'p'){
             console.log(player);
         };
@@ -58,12 +56,12 @@ var isWalk = false;
             //if 1... if 2... if 3...
             switch (isAttacked) {
                 case 1:
-                    console.log("Oh no a monster!!!");
+                    console.log("AHHHH!!! You see your first ghost!");
                     var getEnemy = enemies[Math.floor(Math.random() * enemies.length)];
                     var currentEnemy = getEnemy;
                     console.log(currentEnemy);
-                    toFight = rs.keyInSelect(options, "What do you want to do now?");
-                    console.log("So you want to " + options[toFight]); //here I need to call the fight function
+                    toFight = rs.keyInSelect(options, "You only have two options, run or FIGHT?");
+                    console.log("I see you want to " + options[toFight]); //here I need to call the fight function
                     if (toFight === 0) {
                         fight = true;
                     } else if (toFight === 1) {
@@ -73,12 +71,12 @@ var isWalk = false;
                     break;
                 case 2:
                     // console.log("Safe for now keep walking");
-                    walkPrint = rs.keyIn("Press 'w' to walk or 'p' to print your stats!\n", {
+                    walkPrint = rs.keyIn("Press 'w' to keep walking if you dare or 'p' to print your stats!\n", {
                         limit: 'wp'
                     });
                     break;
                 case 3:
-                walkPrint = rs.keyIn("Press 'w' to walk or 'p' to print your stats!\n", {
+                walkPrint = rs.keyIn("Press 'w' to keep walking if you dare or 'p' to print your stats!\n", {
                     limit: 'wp'
                 });
                     break;
@@ -117,9 +115,8 @@ var isWalk = false;
         //need to make one for fighting and one for running.
         while (fight) {
             //right now my current enemy has hitpoints of currentEnemy.hitPoints
-            
             var attackPower = Math.floor(Math.random() * 20 + 10);
-            console.log("Your attack power is " + attackPower + ".");
+            console.log("For your battle you have " + attackPower + " attack.");
             //did you kill the enemy. or did he get away.
             if (attackPower > currentEnemy.hitPoints) {
                 win();
@@ -129,11 +126,11 @@ var isWalk = false;
                 //enemy takes damage
                 currentEnemy.hitPoints = currentEnemy.hitPoints - attackPower;
                 //enemy attacks back
-                console.log("Shoot you hurt him but he is not dead yet. He has " + currentEnemy.hitPoints + " hitpoints remaining. Watch out he is fighting back with " + currentEnemy.attack + " attack!");
+                console.log("Your evil ghost is wounded but he is not dead yet. He has " + currentEnemy.hitPoints + " hitpoints remaining. Watch out he is fighting back with " + currentEnemy.attack + " attack!");
                 //get current enemy attack power and minus it from my hitpoints
                 player.hitPoints = player.hitPoints - currentEnemy.attack;
                 if (player.hitPoints <= 0) {
-                    console.log("It looks like that was too much for you. You have " + player.hitPoints + " remaining, your enemy has won!");
+                    console.log("The ghost was stronger than you thought. You have " + player.hitPoints + " remaining, your enemy has won and you will never make it out of the forest!");
                     //end game here - actually probably end before the console.log and add clever message when game ends???
                     fight = false;
                 } else {
