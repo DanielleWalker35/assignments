@@ -1,87 +1,88 @@
-var toDoList = document.getElementById("toDo");
 var myList = "https://api.vschool.io/danielle/todo/"
+document.onload = pullToDos();
+var toDoList = document.getElementById("toDo");
 //put data object and inputs and define my form
-var newData = {
-    title: "",
-    description: "",
-    price: "",
-    completed: "",
-};
+
 var form = document.submit;
-var titleInput = document.submit.title;
-var descriptInput = document.submit.description;
-var priceInput = document.submit.price;
 
-titleInput.addEventListener("input", function (event) {
-    newData.title = event.target.value;
-});
-descriptInput.addEventListener("input", function (event) {
-    newData.description = event.target.value;
-});
-priceInput.addEventListener("input", function (event) {
-    newData.price = event.target.value;
-})
+function createDOMStuff(toDoItem) {
+    let listItem = document.createElement("li");
+    let checkBox = document.createElement("input");
+    let spanItem = document.createElement("span");
+    let description = document.createElement("p");
+    // description.innerHTML = "description";
+    let price = document.createElement("p");
+    let image = document.createElement("img");
+    checkBox.type = "checkbox";
+    checkBox.checked = toDoItem.completed;
 
-axios.get(myList).then(function (response) {
-    for (var i = 0; i < response.data.length; i++) {
-        var listItem = document.createElement("li");
-        var checkBox = document.createElement("input");
-        let spanItem = document.createElement("span");
-        spanItem.innerHTML = response.data[i].title;
-        spanItem.id = response.data[i]._id;
-        checkBox.type = "checkbox";
-        checkBox.checked = response.data[i].completed;
-
-        if (checkBox.checked) {
-            spanItem.style.textDecoration = "line-through";
-        }
-        checkBox.addEventListener("change", function (event) {
-            //do a put request
-            axios.put(myList + spanItem.id, {
-                completed: event.target.checked
-            }).then(function (response) {
-                console.log(spanItem.id);
-                if (event.target.checked) {
-                    spanItem.style.textDecoration = "line-through";
-                } else {
-                    spanItem.style.textDecoration = "none";
-                }
-            })
+    if (checkBox.checked) {
+        spanItem.style.textDecoration = "line-through";
+        description.style.textDecoration = "line-through";
+    }
+    var id = toDoItem._id;
+    var deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.innerHTML = "Delete";
+    spanItem.innerHTML = toDoItem.title;
+    description.innerHTML = "description: " + toDoItem.description;
+    price.innerHTML = "price: $" + toDoItem.price;
+    image.innerHTML = toDoItem.image;
+    deleteButton.addEventListener("click", function (event) {
+        toDoList.removeChild(listItem);
+        axios.delete("https://api.vschool.io/danielle/todo/" + id, {id: event.target.value}).then(function (response) {
         })
-        listItem.appendChild(checkBox);
-        listItem.appendChild(spanItem);
-        toDoList.appendChild(listItem);
-    };
+    })
+    checkBox.addEventListener("change", function (event) {
+        //do a put request
+        var id = toDoItem._id;
+        if (event.target.checked) {
+            spanItem.style.textDecoration = "line-through";
+            description.style.textDecoration = "line-through";
+        } else {
+            spanItem.style.textDecoration = "none";
+            description.style.textDecoration = "none";
+        }
+        axios.put("https://api.vschool.io/danielle/todo/" + id, {
+            completed: event.target.checked
+        }).then(function (response) {
+        })
+    })
+    listItem.appendChild(checkBox);
+    listItem.appendChild(spanItem);
+    listItem.appendChild(description);
+    listItem.appendChild(price);
+    listItem.appendChild(deleteButton);
+    listItem.appendChild(image);
+    toDoList.appendChild(listItem);
 
+}
 
-});
+function pullToDos() {
+    axios.get(myList).then(function (response) {
+        // console.log(response);
+        for (var i = 0; i < response.data.length; i++) {
+            createDOMStuff(response.data[i]);
+        };
+    });
+}
 form.addEventListener("submit", function (event) {
     event.preventDefault();
-    axios.post(myList, newData).then(function (response){
-    axios.post(myList, newData).then(function (response) {
-        let listItem = document.createElement("li");
-        let checkBox = document.createElement("input");
-        let spanItem = document.createElement("span");
-        spanItem.innerHTML = response.data.title;
-        spanItem.id = response.data._id;
-        checkBox.type = "checkbox";
-        checkBox.checked = newData.completed;
-        listItem.appendChild(checkBox);
-        listItem.appendChild(spanItem);
-        toDoList.appendChild(listItem);
-        checkBox.addEventListener("change", function (event) {
-            //do a put request
-            axios.put(myList + spanItem.id, {
-                completed: event.target.checked
-            }).then(function (response) {
-                console.log(spanItem.id);
-                if (event.target.checked) {
-                    spanItem.style.textDecoration = "line-through";
-                } else {
-                    spanItem.style.textDecoration = "none";
-                }
-            })
+    var newData = {
+        title: form.title.value,
+        description: form.description.value,
+        price: form.price.value,
+        image: form.image.value,
+        completed: false
+    };
+    createDOMStuff(newData);
+    axios.post("https://api.vschool.io/danielle/todo/", newData).then(function (response) {
         })
-    });
-    });
+        .catch(error => {
+            console.error(error);
+        })
+    form.title.value = "";
+    form.description.value = "";
+    form.price.value = "";
+    form.image.value = "";
 });
