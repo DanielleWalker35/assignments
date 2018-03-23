@@ -19,13 +19,11 @@ body {
 }
 
 .container {
-
     /* height: 300vh; */
     display: grid;
-    grid-template-rows: ; 
+    grid-template-rows: ;
     grid-template-columns: 1 fr;
     grid-template-areas: "hdr" "nav" "abt" "par" "req" "ftr" "art" "men";
-    
 }
 
 header {
@@ -37,22 +35,26 @@ nav {
     /* height: ; */
     grid-area: nav;
 }
-.paraText{
-    /* grid-area: b; */
+
+.paraText {
     line-height: 1.6;
-    font-size: 8.5px;
+    font-size: 8.25px;
     padding-bottom: 1%;
 }
+
 h3 {
     font-size: 11px;
     font-family: "Julius Sans One";
     font-weight: 100;
+    padding-top: 4.5%;
     padding-bottom: 1%;
 }
+
 p span {
     font-size: 7px;
     text-decoration: underline dotted;
 }
+
 .submission {
     color: #0d8ba1;
 }
@@ -60,23 +62,35 @@ p span {
 .submission:hover {
     text-decoration: underline;
 }
+
+.about,
+.participation,
+.requirements {
+    /* padding-top: 2%; */
+    padding-bottom: 3.5%;
+    padding-left: 9%;
+    padding-right: 9%;
+}
+
+p {
+    padding-bottom: 1.5%;
+}
+
 .about {
     grid-area: abt;
 }
 
 .participation {
+    background-image: url(bamboo.png);
+    background-color: rgba(138, 188, 159, 0.5);
+    background-attachment: fixed;
+    line-height: 1.75;
     grid-area: par;
-    border: 1px black solid;
-
+    /* border: 1px black solid; */
 }
 
 .requirements {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 9%;
-    padding-right: 9%;
     grid-area: req;
-    
 }
 
 footer {
@@ -86,7 +100,6 @@ footer {
     background-repeat: repeat, repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0, 0 80%;
     grid-area: ftr;
-    /* position: relative; */
     text-align: center;
     /* border: 2px solid green; */
 }
