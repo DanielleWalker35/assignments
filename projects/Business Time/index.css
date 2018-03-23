@@ -8,7 +8,9 @@
     src: url(Ubuntu-Regular.ttf);
 }
 body {
-    background-color: rgb(43, 122, 250);
+    background-image: url(grass.jpg);
+    background-repeat: repeat;
+    /* background-color: rgb(84, 200, 253); */
 }
 .wrapper {
     margin: auto;
@@ -25,7 +27,9 @@ header {
     text-align: center;
     font-size: 40px;
     padding-top: 3%;
-    padding-bottom: 3%;
+    padding-bottom: 6%;
+    background-image: url(flower.jpg);
+    background-size: cover;
     /* background-color: rgb(249, 253, 192); */
 }
 

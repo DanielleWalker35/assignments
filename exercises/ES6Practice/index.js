@@ -28,21 +28,59 @@
 //default parameters
 //
 
+// the key word this  is always an object and always context dependant and always refers to the object which called the function
+
+//never a good idea to make methods an innumerable property on an object
+
+//sometimes we don't want the this keyword to refer to the object that called it
+
+
+
 
 const name = 'John'  
 const age = 101  
-let pets = ["cat", "dog"]
+const pets = ["cat", "dog"]
 
-let petObjects = []
+const petObjects = []
 
 for (let i = 0; i < pets.length; i++){  
-  let pet = {type: pets[i]}
+  const pet = {type: pets[i]}
+  let name;
   if (pets[i] === "cat"){
-    let name = "fluffy"
+    name = "fluffy"
   } else {
-    let name = "spot"
+    name = "spot"
   }
   pet.name = name
   petObjects.push(pet)
 }
 console.log(petObjects);
+console.log(name);
+
+const vegetables = carrots.map(function(carrot){  
+  return {type: "carrot", name: carrot}
+});
+
+const vegetables = carrots.map(carrot=> ({type: "carrot", name: carrot}));
+
+friends = people.filter(function(person){  
+  return !!person.friendly
+})
+friends = people.filter(person => !!person.friendly);
+
+const doMathSum = (a, b) => a + b;
+
+var produceProduct = (a, b) => a * b;
+
+const phrase = (firstName = "Jane", lastName = "Doe", age = 100) => `Hi ${firstName} ${lastName}, how does it feel to be ${age}?`;
+console.log(phrase());
+
+const dogs = animals.filter((animal) => (animal.type === "dog"));
+  
+const vacay = (location="Hawaii", name="Janice") => `Hi ${name}! 
+
+Welcome to ${location}.
+
+I hope you enjoy your stay. Please ask the president of ${location} if you need anything.`;
+
+console.log(vacay());
