@@ -1,56 +1,243 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
-.container{
-    height: 200vh;
-    display: grid;
-    grid-template-areas: 
-    "hdr"
-    "nav"
-    "about"
-    "part"
-    "req"
-    "ftr"
-    "art"
-    "men";
-    grid-template-rows: .15fr 1fr 1fr 1fr 1fr 1fr .5fr .5fr;
+@font-face {
+    font-family: Julius Sans One;
+    src: url(Julius_Sans_One/JuliusSansOne-Regular.ttf);
 }
-header{
+
+@font-face {
+    font-family: Verde Moderna;
+    src: url(verdemoderna.woff);
+}
+
+body {
+    color: #325050;
+}
+
+.container {
+
+    /* height: 300vh; */
+    display: grid;
+    grid-template-rows: ; 
+    grid-template-columns: 1 fr;
+    grid-template-areas: "hdr" "nav" "abt" "par" "req" "ftr" "art" "men";
+    
+}
+
+header {
+    height: 90px;
     grid-area: hdr;
 }
-nav{
+
+nav {
+    /* height: ; */
     grid-area: nav;
 }
-.about{
-    grid-area: about;
+.paraText{
+    /* grid-area: b; */
+    line-height: 1.6;
+    font-size: 8.5px;
+    padding-bottom: 1%;
 }
-.participation{
-    grid-area: part;
+h3 {
+    font-size: 11px;
+    font-family: "Julius Sans One";
+    font-weight: 100;
+    padding-bottom: 1%;
 }
-.requirements{
+p span {
+    font-size: 7px;
+    text-decoration: underline dotted;
+}
+.submission {
+    color: #0d8ba1;
+}
+
+.submission:hover {
+    text-decoration: underline;
+}
+.about {
+    grid-area: abt;
+}
+
+.participation {
+    grid-area: par;
+    border: 1px black solid;
+
+}
+
+.requirements {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 9%;
+    padding-right: 9%;
     grid-area: req;
+    
 }
-footer{
+
+footer {
+    background: url(contours2x.png), url(gridlines.png), url(noise.png), url(koi.jpg);
+    background-size: 50%, 40%, auto, cover;
+    background-attachment: fixed, fixed, scroll, scroll;
+    background-repeat: repeat, repeat, no-repeat, no-repeat;
+    background-position: 0 0, 0 0, 0 0, 0 80%;
     grid-area: ftr;
+    /* position: relative; */
+    text-align: center;
+    /* border: 2px solid green; */
 }
+
+.topFooter {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.footParagraph {
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 140%;
+    padding-top: 9%;
+    flex: 1;
+    padding-bottom: 8.5%;
+}
+
+.footerLinks {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.solidLine {
+    font-size: 25px;
+    text-align: center;
+    font-family: "Verde Moderna";
+    bottom: 0;
+    height: 35%;
+    width: 100%;
+    background-color: #134347;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.character {
+    color: rgba(255, 255, 255, 0.5);
+}
+
 .art {
+    position: relative;
+    /* border: 3px solid red; */
+    font-style: normal;
+    font-weight: 400;
+    color: #607476;
+    background-color: #edf4f0;
     grid-area: art;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    list-style-type: none;
+    font-size: 9px;
 }
-.menu{
+
+li {
+    padding-left: 15%;
+    font-style: italic;
+    color: #c0cac3;
+}
+
+.artLi {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-top: solid .6px #d9e3dc;
+}
+
+a {
+    color: #607476;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.design {
+    display: block;
+    font-family: "Julius Sans One";
+}
+
+.name {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 7.5px;
+    color: #616857;
+}
+
+.menu {
+    background-image: url(bamboo.png);
+    background-color: rgba(138, 188, 159, 0.5);
+    font-family: "Julius Sans One", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #607476;
     grid-area: men;
 }
-@media (min-width: 750px){
-    .container{
+
+.links {
+    border-top: .5px solid #a0b9ad;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    list-style-type: none;
+    font-size: 9px;
+}
+
+.linksLi {
+    padding-top: 6%;
+    padding-bottom: 6%;
+    border-bottom: .5px solid #a0b9ad;
+}
+
+@media (min-width: 600px) {
+    .container {
         grid-template-columns: 2fr 1fr;
-        grid-template-rows: .2fr 1fr 1fr 1fr .8fr;
-        grid-template-areas: 
-        "hdr nav"
-        "about men"
-        "part men"
-        "req ."
-        "ftr ftr";
+        grid-template-rows: .325fr 1fr 1fr 1fr .8fr;
+        grid-template-areas: "hdr nav" "about art" "part men" "req ." "ftr ftr";
+    }
+    .artist {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding: 15% 30% 30% 15%;
+        grid-template-areas: "art1" "art2" "art3" "art4" "art5" "art6" "art7" "art8";
+    }
+    .art {
+        border-top: none;
+        border-bottom: solid .5px #d9e3dc;
+        font-size: 11px;
+        padding-top: 8%;
+        padding-bottom: 8%;
+        padding-left: 0%;
+    }
+    .art.eight {
+        border-bottom: none;
+    }
+    .menu {
+        border-top: none;
+        padding: 20% 30% 40% 10%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "men1" "men2" "men3" "men4" "men5";
+    }
+    .men {
+        padding-left: 0%;
+    }
+    .men.one {
+        border-top: .5px solid #a0b9ad;
     }
 }

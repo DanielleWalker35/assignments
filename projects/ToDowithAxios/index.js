@@ -75,9 +75,10 @@ form.addEventListener("submit", function (event) {
         image: form.image.value,
         completed: false
     };
-    createDOMStuff(newData);
+    
     axios.post("https://api.vschool.io/danielle/todo/", newData).then(function (response) {
-        })
+        createDOMStuff(response.data);
+})
         .catch(error => {
             console.error(error);
         })

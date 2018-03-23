@@ -15,7 +15,7 @@ body {
     width: 90%;
     display: flex;
     flex-direction: column;
-    height: 200vh;
+    height: 300vh;
     font-family: "Ubuntu-Regular";
     background-color: white;
 }
@@ -23,8 +23,9 @@ body {
 header {
     flex: .15;
     text-align: center;
-    font-size: 70px;
+    font-size: 40px;
     padding-top: 3%;
+    padding-bottom: 3%;
     /* background-color: rgb(249, 253, 192); */
 }
 
@@ -32,52 +33,38 @@ nav {
     display: flex;
     flex-direction: column;
     text-align: center;
+    background-color: rgb(21, 148, 21);
+
 }
 
 a {
     font-size: 20px;
-    background-color: rgb(21, 148, 21);
     /* border: 1px solid black; */
 }
 
 .bottomPics {
-    flex: .30;
+    flex: .70;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    align-items: center;
+    /* flex-wrap: wrap; */
 }
 
 .products {
+    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     width: 50%;
 }
 
-@media (min-width: 700px) {
-    nav {
-        flex-direction: row;
-    }
-    a {
-        width: 50%;
-    }
-}
-
 .heading {
-    flex: .60;
+    flex: .70;
     background-image: url(cowlayingdown.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-@media (min-width: 600px) {
-    .information {
-        flex: content;
-       }
-       .heading2{
-           flex: content;
-       }
 }
 
 .information {
@@ -89,10 +76,14 @@ a {
 
 h2 {
     font-size: 30px;
+    padding-bottom: 5%;
 }
 
 p {
-    font-size: 18px;
+    font-size: 12px;
+}
+.headerProd {
+    font-size: 200%;
 }
 
 .cheese {
@@ -107,31 +98,39 @@ p {
     background-image: url(butter.jpg);
 }
 
-@media (min-width: 400px) {
-    .products {
-        flex: .30;
-    }
-}
-
 footer {
     flex: .20;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
     padding: 1.5%;
 }
 
 .footerText {
-    font-size: 150%;
-    padding-top: 3.5%;
+    flex:.25;
+    font-size: 100%;
 }
-
+.social{
+    display: flex;
+    flex: .75;
+    width: 100%;
+    justify-content: center;
+    justify-content: space-evenly;
+    /* background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
+    border-style: none; */
+}
 button {
-    flex: .15;
+    height: 100%;
+    width: 20%;
     background-size: contain;
     background-repeat: no-repeat;
     background-color: white;
     border-style: none;
-}
+
+} 
 
 .button1 {
     background-image: url(facebook.svg);
@@ -145,7 +144,7 @@ button {
     background-image: url(twitter.png);
 }
 .heading2 {
-    font-size: 250%;
+    font-size: 200%;
     text-align: center;
     margin: 2%;
 }
@@ -185,7 +184,7 @@ button {
 }
 
 .productInfo{
-    font-size: 150%;
+    font-size: 12px;
 }
 .milk {
     background-image: url(milk.jpg);
@@ -193,4 +192,35 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+}
+@media (min-width: 350px) {
+    header {
+        font-size: 60px;
+    }
+    .headerProd {
+        font-size: 60px;
+    }
+}
+
+@media (min-width: 520px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    header {
+        font-size: 80px;
+    }
+    .headerProd {
+        font-size: 80px;
+    }
+}
+
+@media (min-width: 640px) {
+  .bottomPics{
+      flex-direction: row;
+  }
+  .products {
+      margin: 5%;
+      height: 50%;
+  }
 }
