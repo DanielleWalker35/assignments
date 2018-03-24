@@ -13,14 +13,20 @@
     font-family: Verde Moderna;
     src: url(verdemoderna.woff);
 }
+@font-face{
+    font-family: Libre Baskerville;
+    src: url(Libre_Baskerville.ttf)
+}
 
 body {
+    font-family:  'Libre Baskerville', sans-serif;
+    font-style: italic;
     color: #325050;
 }
 .topImg {
     z-index: 1;
-    border: 2px solid green;
-    height: 115px;
+    /* border: 2px solid green; */
+    height: 135px;
     width: 100%;
     position: absolute;
     background: url(contours2x.png), url(gridlines.png), url(noise.png), url(huntington.jpg);
@@ -31,9 +37,7 @@ body {
 }
 
 .container {
-    /* height: 300vh; */
     display: grid;
-    /* grid-template-rows: ; */
     grid-template-columns: 1 fr;
     grid-template-areas: "hdr" "nav" "abt" "par" "req" "ftr" "art" "men";
 }
@@ -45,45 +49,110 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* border: 2px solid tomato; */
+    padding:5%;
+    border-top: 4px solid rgba(19, 67, 71, 0.9);
 }
-
-.zenGarden {
-    font-family: "Julius Sans One", sans-serif;
-    font-size: 18px;
-    color: white;
-    border: 1px solid black;
-}
-
-.headerTop {
-    border: 1px solid black;
+header {
+    /* border: 1px solid blue; */
+    width: 100%;
     display: flex;
-    padding: 4%;
-    /* padding-bottom: 5%; */
-    width: 60%;
+    align-items: center;
+    justify-content: center;
 }
 
 .circlePic {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     background-image: url(enso.svg);
-    background-size: cover;
-    width: 40px;
-    height: 40px;
+    background-size: contain;
+    width: 45px;
+    height: 45px;
     margin-right: 5%;
+    opacity: 0.6;
+    /* margin-bottom: 3%; */
+}
+.zenGarden {
+    /* padding-top: 3%; */
+    padding-bottom: 0%;
+    font-family: "Julius Sans One", sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    /* border: 1px solid black; */
+  
 }
 
 .beauty {
+    position: absolute;
     font-family: "Libre Baskerville";
     font-style: italic;
     font-weight: 400;
     font-size: 11px;
     color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    padding-left: 15%;
+    padding-top: 9.5%;
+}
+.css.hdr{
+    font-size: 10px;
 }
 
 nav {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
     grid-area: nav;
     z-index: 6;
+    background-color: rgba(255,255,255,0.25);
+    padding: 2.5%;
+    text-align: center;
+}
+.navLink{
+    font-family: "Julius Sans One";
+    color:rgba(255, 255, 255, 0.65);
+    font-size: 11px;
+}
+.navArrow{
+    font-family: "Verde Moderna";
+}
+
+.about,
+.participation,
+.requirements {
+font-family:  "Libre Baskerville";
+font-style: normal;
+   line-height: 1.6;
+    font-size: 8.5px;
+    padding-bottom: 3.5%;
+    padding-left: 9%;
+    padding-right: 9%;
+}
+
+p {
+    padding-bottom: 1.5%;
+}
+
+.about {
+    background-color: white;
+    position: relative;
+    z-index: 5;
+    /* border: 1px solid black; */
+    padding-top: 4%;
+    grid-area: abt;
+}
+
+.participation {
+    /* border: 1px solid black; */
+    background-image: url(bamboo.png);
+    background-color: rgba(138, 188, 159, 0.5);
+    background-attachment: fixed;
+    line-height: 1.75;
+    grid-area: par;
+    /* border: 1px black solid; */
+}
+
+.requirements {
+    /* border: 1px solid black; */
+    grid-area: req;
 }
 
 .paraText {
@@ -104,6 +173,9 @@ h3 {
     font-size: 7px;
     text-decoration: underline dotted;
 }
+.css.men{
+    font-size: 8px;
+}
 
 .topLink {
     font-family: "Julius Sans One";
@@ -119,44 +191,6 @@ h3 {
     text-decoration: underline;
 }
 
-.about,
-.participation,
-.requirements {
-    line-height: 1.6;
-    font-size: 8.25px;
-    padding-bottom: 3.5%;
-    padding-left: 9%;
-    padding-right: 9%;
-}
-
-p {
-    padding-bottom: 1.5%;
-}
-
-.about {
-    background-color: white;
-    position: relative;
-    z-index: 5;
-    border: 1px solid black;
-    padding-top: 4%;
-    grid-area: abt;
-}
-
-.participation {
-    border: 1px solid black;
-    background-image: url(bamboo.png);
-    background-color: rgba(138, 188, 159, 0.5);
-    background-attachment: fixed;
-    line-height: 1.75;
-    grid-area: par;
-    /* border: 1px black solid; */
-}
-
-.requirements {
-    border: 1px solid black;
-    grid-area: req;
-}
-
 .arrow {
     font-family: "Verde Moderna";
     color: #a9b995;
@@ -166,7 +200,7 @@ p {
 }
 
 footer {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background: url(contours2x.png), url(gridlines.png), url(noise.png), url(koi.jpg);
     background-size: 50%, 40%, auto, cover;
     background-attachment: fixed, fixed, scroll, scroll;
@@ -175,6 +209,7 @@ footer {
     grid-area: ftr;
     text-align: center;
     /* border: 2px solid green; */
+    font-family: "Libre Baskerville";
 }
 
 .topFooter {
@@ -220,7 +255,7 @@ footer {
 }
 
 .art {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: relative;
     /* border: 3px solid red; */
     font-style: normal;
@@ -267,7 +302,7 @@ a {
 }
 
 .menu {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-image: url(bamboo.png);
     background-color: rgba(138, 188, 159, 0.5);
     font-family: "Julius Sans One", sans-serif;
