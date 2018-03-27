@@ -28,14 +28,14 @@ body {
 .topImg {
     z-index: 1;
     /* border: 2px solid green; */
-    height: 235px;
+    height: 265px;
     width: 100%;
     position: absolute;
     background: url(contours2x.png), url(gridlines.png), url(noise.png), url(huntington.jpg);
-    background-size: 50%, 40%, auto, cover;
+    background-size: 50%, 60%, auto, cover;
     background-attachment: fixed, fixed, scroll, scroll;
     background-repeat: repeat, repeat, no-repeat, no-repeat;
-    background-position: 0 0, 0 -30%, 0 0, 0 50%;
+    background-position: 0 0, 0 -65%, 0 0, 0 50%;
 }
 
 .container {
@@ -51,9 +51,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    line-height: 1.25;
     /* border: 2px solid tomato; */
-    padding: 6%;
-    border-top: 8px solid rgba(19, 67, 71, 0.9);
+    border-top: 10px solid rgba(19, 67, 71, 0.9);
 }
 
 header {
@@ -66,37 +66,37 @@ header {
 
 .circlePic {
     /* border: 1px solid purple; */
+    margin-top: 4%;
     background-image: url(enso.svg);
     background-size: contain;
-    width: 80px;
-    height: 80px;
-    margin-right: 5%;
-    opacity: 0.6;
+    width: 52px;
+    height: 52px;
+    opacity: 0.7;
+    margin-bottom: 1.5%;
+}
+.para{
+    padding-bottom: 4%;
 }
 
 .zenGarden {
-    padding-bottom: 0%;
     font-family: "Julius Sans One", sans-serif;
     font-style: normal;
-    font-size: 42px;
+    font-size: 32px;
     color: white;
     /* border: 1px solid black; */
 }
 
 .beauty {
-    position: absolute;
     font-family: "LibreBaskerville";
     font-style: italic;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 22px;
     color: rgba(255, 255, 255, 0.6);
     width: 100%;
-    padding-left: 15%;
-    padding-top: 9.5%;
 }
 
 .css.hdr {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 nav {
@@ -105,19 +105,24 @@ nav {
     grid-area: nav;
     z-index: 5;
     background-color: rgba(255, 255, 255, 0.25);
-    padding: 2.5%;
+    padding: 3.5%;
     text-align: center;
 }
 
 .navLink {
+    /* border: 1px solid red; */
     font-family: "Julius Sans One";
     color: rgba(255, 255, 255, 0.65);
-    font-size: 16px;
+    font-size: 18px;
     line-height: 40px;
 }
 
 .navArrow {
-    font-family: "Verde Moderna";
+ background-image: url(chevronRt.png);
+ background-position: contain;
+ width: 50px;
+ height: 50px;
+ color: red;
 }
 
 .about,
