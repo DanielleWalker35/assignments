@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "hdr hdr hdr hdr hdr hdr hdr hdr hdr"
+    "nav nav nav nav nav nav nav nav nav"
+    "inf inf inf pro pro pro pro pro pro"
+    "ftr ftr ftr ftr ftr ftr ftr ftr ftr" 
+
+}
+header{
+    padding:1%;
+    grid-area: hdr;
+    font-size: 5em;
+    text-align: center;
+    background-image: url("./images/grass.jpeg");
+}
+nav{
+    grid-area: nav;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+    padding: 1%;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+.info{
+    grid-area: inf;
+    padding: 10%;
+    line-height: 2.5;
+    font-size: 18px;
+    background-image: url("./images/blueball.png");
+    background-size: 90px;
+}
+.puppyPara{
+    padding: 3%;
+    background-color: white;
+}
+
+.products{
+    grid-area: pro;
+}
+h2{
+    font-size: 24px;
+    padding-top: 1%;
+   text-decoration: underline;
+}
+footer{
+    margin-top: 1%;
+    grid-area: ftr;
+    display: flex;
+    justify-content: space-evenly;
+}
+.pupInfo{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+}
+.puppy{
+    border: 5px black solid;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    margin: 3%;
+}
+.one{
+background-image: url("./images/great-dane.jpg");
+background-position: 90%;
+}
+.two{
+    background-image: url("./images/pitbull.jpg");
+background-position: 60%;
+}
+.three{
+    background-image: url("./images/black-lab.jpg");
+    background-position: 30%;
+}
+.four{
+    background-image: url("./images/godlenret.jpg");
+    background-position: 60%;
+}
+.five{
+    background-image: url("./images/poodle.jpg");
+    background-position: 60% 10%;
+}
+.puppyName{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footerIcon{
+    display: flex;
+}
+.footerPic{
+    background-image: url("./images/puppygraphic.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: 1%;
+}
+.emailInfo{
+    display: flex;
+    align-items: center;
+}
+.emailPic{
+    background-image: url("./images/envelope.png");
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    margin: 1%;
+}
+button{
+    margin-left: 5%;
+    width: 100px;
+    height: 25px;
+}

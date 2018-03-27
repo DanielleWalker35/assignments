@@ -13,20 +13,22 @@
     font-family: Verde Moderna;
     src: url(verdemoderna.woff);
 }
-@font-face{
-    font-family: Libre Baskerville;
-    src: url(Libre_Baskerville.ttf)
+
+@font-face {
+    font-family: LibreBaskerville;
+    src: url(LibreBaskerville-Regular.ttf)
 }
 
 body {
-    font-family:  'Libre Baskerville', sans-serif;
+    font-family: "LibreBaskerville";
     font-style: italic;
-    color: #325050;
+    color: #2e484c;
 }
+
 .topImg {
     z-index: 1;
     /* border: 2px solid green; */
-    height: 135px;
+    height: 235px;
     width: 100%;
     position: absolute;
     background: url(contours2x.png), url(gridlines.png), url(noise.png), url(huntington.jpg);
@@ -44,15 +46,16 @@ body {
 
 .headerBox {
     z-index: 6;
-    grid-area: hdr; 
+    grid-area: hdr;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* border: 2px solid tomato; */
-    padding:5%;
-    border-top: 4px solid rgba(19, 67, 71, 0.9);
+    padding: 6%;
+    border-top: 8px solid rgba(19, 67, 71, 0.9);
 }
+
 header {
     /* border: 1px solid blue; */
     width: 100%;
@@ -65,63 +68,65 @@ header {
     /* border: 1px solid purple; */
     background-image: url(enso.svg);
     background-size: contain;
-    width: 45px;
-    height: 45px;
+    width: 80px;
+    height: 80px;
     margin-right: 5%;
     opacity: 0.6;
-    /* margin-bottom: 3%; */
 }
+
 .zenGarden {
-    /* padding-top: 3%; */
     padding-bottom: 0%;
     font-family: "Julius Sans One", sans-serif;
     font-style: normal;
-    font-size: 20px;
+    font-size: 42px;
     color: white;
     /* border: 1px solid black; */
-  
 }
 
 .beauty {
     position: absolute;
-    font-family: "Libre Baskerville";
+    font-family: "LibreBaskerville";
     font-style: italic;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 20px;
     color: rgba(255, 255, 255, 0.6);
     width: 100%;
     padding-left: 15%;
     padding-top: 9.5%;
 }
-.css.hdr{
-    font-size: 10px;
+
+.css.hdr {
+    font-size: 16px;
 }
 
 nav {
     /* border: 1px solid black; */
     width: 100%;
     grid-area: nav;
-    z-index: 6;
-    background-color: rgba(255,255,255,0.25);
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.25);
     padding: 2.5%;
     text-align: center;
 }
-.navLink{
+
+.navLink {
     font-family: "Julius Sans One";
-    color:rgba(255, 255, 255, 0.65);
-    font-size: 11px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 16px;
+    line-height: 40px;
 }
-.navArrow{
+
+.navArrow {
     font-family: "Verde Moderna";
 }
 
 .about,
 .participation,
 .requirements {
-font-family:  "Libre Baskerville";
-font-style: normal;
-   line-height: 1.6;
-    font-size: 8.5px;
+    font-family: "LibreBaskerville";
+    font-style: normal;
+    line-height: 27px;
+    font-size: 17px;
     padding-bottom: 3.5%;
     padding-left: 9%;
     padding-right: 9%;
@@ -156,13 +161,13 @@ p {
 }
 
 .paraText {
-    line-height: 1.6;
-    font-size: 8.25px;
+    line-height: 2;
+    font-size: 13px;
     padding-bottom: 1%;
 }
 
 h3 {
-    font-size: 11px;
+    font-size: 22px;
     font-family: "Julius Sans One";
     font-weight: 100;
     padding-top: 4.5%;
@@ -170,17 +175,18 @@ h3 {
 }
 
 .css {
-    font-size: 7px;
+    font-size: 14px;
     text-decoration: underline dotted;
 }
-.css.men{
-    font-size: 8px;
+
+.css.men {
+    font-size: 16px;
 }
 
 .topLink {
     font-family: "Julius Sans One";
     color: #809b7e;
-    font-size: 8px;
+    font-size: 14px;
 }
 
 .submission {
@@ -215,16 +221,16 @@ footer {
 .topFooter {
     display: flex;
     flex-direction: column;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 10.5%;
+    padding-right: 10.5%;
     font-style: italic;
-    font-size: 14px;
+    font-size: 28px;
 }
 
 .footParagraph {
     color: rgba(255, 255, 255, 0.4);
-    line-height: 140%;
-    padding-top: 9%;
+    line-height: 165%;
+    padding-top: 8.5%;
     flex: 1;
     padding-bottom: 8.5%;
 }
@@ -234,7 +240,7 @@ footer {
 }
 
 .solidLine {
-    font-size: 25px;
+    font-size: 50px;
     text-align: center;
     font-family: "Verde Moderna";
     bottom: 0;
@@ -246,8 +252,8 @@ footer {
     align-items: center;
     padding-left: 7%;
     padding-right: 7%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 5.5%;
+    padding-bottom: 5.5%;
 }
 
 .character {
@@ -268,19 +274,22 @@ footer {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     list-style-type: none;
-    font-size: 9px;
+}
+li.artLi{
+    font-size: 16px;
 }
 
 li {
-    padding-left: 15%;
+    padding-left: 20%;
     font-style: italic;
     color: #c0cac3;
 }
 
 .artLi {
+    /* font-size: 20px; */
     /* border: 1px solid black; */
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 8%;
+    padding-bottom: 8%;
     border-top: solid .6px #d9e3dc;
 }
 
@@ -293,11 +302,12 @@ a {
 .design {
     display: block;
     font-family: "Julius Sans One";
+    font-size: 18px;
 }
 
 .name {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 7.5px;
+    font-family: "LibreBaskervielle", Times, serif;
+    font-size: 14px;
     color: #616857;
 }
 
@@ -319,52 +329,48 @@ a {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     list-style-type: none;
-    font-size: 9px;
+    font-size: 17px;
 }
 
 .linksLi {
-    padding-top: 6%;
-    padding-bottom: 6%;
+    padding-top: 7.5%;
+    padding-bottom: 7.5%;
     border-bottom: .5px solid #a0b9ad;
 }
- @media (min-width: 600px) {
-     .topImg{
-         height: 155px;
-     }
+
+@media (min-width: 1130px) {
+    .topImg {
+        height: 155px;
+    }
     .container {
         grid-template-columns: repeat(9, 1fr);
-        grid-template-rows: minmax(100px,auto);
-        grid-template-areas: 
-        "hdr hdr hdr hdr hdr hdr nav nav nav"
-        "abt abt abt abt abt abt art art art"
-        "par par par par par par men men men"
-        "req req req req req req .   .   ."
-        "ftr ftr ftr ftr ftr ftr ftr ftr ftr";
+        grid-template-rows: minmax(100px, auto);
+        grid-template-areas: "hdr hdr hdr hdr hdr hdr nav nav nav" "abt abt abt abt abt abt art art art" "par par par par par par men men men" "req req req req req req .   .   ." "ftr ftr ftr ftr ftr ftr ftr ftr ftr";
     }
-.headerBox {
-height: 155px;
-}
-.paraText{
-    font-size: 10px;
-}
-.about,
-.participation,
-.requirements {
-    /* padding-top: 2%; */
-    padding-bottom: 3.5%;
-    padding-left: 15%;
-    padding-right: 9%;
-}
-.art {
-    display: block;
-    font-size: 11px;
-    /* grid-template-columns: 1fr; */
-    padding: 20% 30% 40% 10%;
-    /* height: 400px; */
-}
-   li{
-       padding:0;
-   }
+    .headerBox {
+        height: 155px;
+    }
+    .paraText {
+        font-size: 10px;
+    }
+    .about,
+    .participation,
+    .requirements {
+        /* padding-top: 2%; */
+        padding-bottom: 3.5%;
+        padding-left: 15%;
+        padding-right: 9%;
+    }
+    .art {
+        display: block;
+        font-size: 11px;
+        /* grid-template-columns: 1fr; */
+        padding: 20% 30% 40% 10%;
+        /* height: 400px; */
+    }
+    li {
+        padding: 0;
+    }
     .links {
         display: block;
         border-top: none;
@@ -374,9 +380,7 @@ height: 155px;
         /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas: "men1" "men2" "men3" "men4" "men5"; */
     }
-
     .menu {
         background-attachment: fixed;
     }
-
 }
