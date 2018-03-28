@@ -28,8 +28,9 @@ body {
 .topImg {
     z-index: 1;
     /* border: 2px solid green; */
-    height: 265px;
+    height: 250px;
     width: 100%;
+    display: block;
     position: absolute;
     background: url(contours2x.png), url(gridlines.png), url(noise.png), url(huntington.jpg);
     background-size: 50%, 60%, auto, cover;
@@ -45,7 +46,7 @@ body {
 }
 
 .headerBox {
-    z-index: 6;
+    z-index: 5;
     grid-area: hdr;
     text-align: center;
     display: flex;
@@ -74,7 +75,8 @@ header {
     opacity: 0.7;
     margin-bottom: 1.5%;
 }
-.para{
+
+.para {
     padding-bottom: 4%;
 }
 
@@ -107,9 +109,15 @@ nav {
     background-color: rgba(255, 255, 255, 0.25);
     padding: 3.5%;
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". . . nv nv nv . . in";
 }
 
 .navLink {
+    grid: nv;
     /* border: 1px solid red; */
     font-family: "Julius Sans One";
     color: rgba(255, 255, 255, 0.65);
@@ -117,12 +125,13 @@ nav {
     line-height: 40px;
 }
 
-.navArrow {
- background-image: url(chevronRt.png);
- background-position: contain;
- width: 50px;
- height: 50px;
- color: red;
+.indicator{
+    grid: in;
+    /* border: 1px solid black; */
+    width: 30px;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 30px;
 }
 
 .about,
@@ -280,7 +289,8 @@ footer {
     grid-template-columns: 1fr 1fr;
     list-style-type: none;
 }
-li.artLi{
+
+li.artLi {
     font-size: 16px;
 }
 
