@@ -1,7 +1,8 @@
 import React from 'react';
 function Card(props) {
     const styles = {
-        border: "1px solid black",
+        border: "3px solid black",
+        borderRadius: "10px",
         padding: "5%",
         margin: "2%",
         width: "300p%",
@@ -30,7 +31,9 @@ function Card(props) {
         }
     };
     pickBackgroundColor();
+
 let dollarSigns = "";
+
     function dollaz() {
         switch (true) {
             default:

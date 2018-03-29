@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: LibreBaskerville;
-    src: url(LibreBaskerville-Regular.ttf)
+    src: url(Libre_Baskerville/LibreBaskerville-Regular.ttf) format("ttf");
 }
 
 body {
@@ -46,6 +46,7 @@ body {
 }
 
 .headerBox {
+    height: 180px;
     z-index: 5;
     grid-area: hdr;
     text-align: center;
@@ -102,36 +103,39 @@ header {
 }
 
 nav {
+    height: 70px;
     /* border: 1px solid black; */
     width: 100%;
     grid-area: nav;
     z-index: 5;
     background-color: rgba(255, 255, 255, 0.25);
-    padding: 3.5%;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    ". . . nv nv nv . . in";
+    /* padding: 3.5%; */
+    /* text-align: center; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navLink {
-    grid: nv;
     /* border: 1px solid red; */
     font-family: "Julius Sans One";
     color: rgba(255, 255, 255, 0.65);
     font-size: 18px;
-    line-height: 40px;
+    /* line-height: 55px; */
+    /* padding-top: 4%; */
+
 }
 
 .indicator{
-    grid: in;
     /* border: 1px solid black; */
-    width: 30px;
     color: rgba(255, 255, 255, 0.65);
-    font-family: 'Libre Baskerville', sans-serif;
-    font-size: 30px;
+    font-family: 'Verde Moderna';
+    font-size: 300%;
+    font-style: normal;
+    -webkit-font-smothing: antialiased;
+}
+.inLeft{
+opacity:0;
 }
 
 .about,
@@ -149,13 +153,17 @@ nav {
 p {
     padding-bottom: 1.5%;
 }
+.remove{
+    opacity: 0;
+    font-size: 0px;
+}
 
 .about {
     background-color: white;
     position: relative;
     z-index: 5;
     /* border: 1px solid black; */
-    padding-top: 4%;
+    padding-top: 8%;
     grid-area: abt;
 }
 
@@ -222,7 +230,7 @@ h3 {
 footer {
     /* border: 1px solid black; */
     background: url(contours2x.png), url(gridlines.png), url(noise.png), url(koi.jpg);
-    background-size: 50%, 40%, auto, cover;
+    background-size: 20%, 10%, auto, cover;
     background-attachment: fixed, fixed, scroll, scroll;
     background-repeat: repeat, repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0, 0 80%;
@@ -238,7 +246,7 @@ footer {
     padding-left: 10.5%;
     padding-right: 10.5%;
     font-style: italic;
-    font-size: 28px;
+    font-size: 26px;
 }
 
 .footParagraph {
@@ -254,11 +262,10 @@ footer {
 }
 
 .solidLine {
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     font-family: "Verde Moderna";
     bottom: 0;
-    height: 35%;
     width: 100%;
     background-color: #134347;
     display: flex;
@@ -266,8 +273,8 @@ footer {
     align-items: center;
     padding-left: 7%;
     padding-right: 7%;
-    padding-top: 5.5%;
-    padding-bottom: 5.5%;
+    padding-top: 8.5%;
+    padding-bottom: 8.5%;
 }
 
 .character {
@@ -291,11 +298,11 @@ footer {
 }
 
 li.artLi {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 li {
-    padding-left: 20%;
+    padding-left: 10%;
     font-style: italic;
     color: #c0cac3;
 }

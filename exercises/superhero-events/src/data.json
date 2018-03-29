@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Superman",
+        "image": "https://static.comicvine.com/uploads/scale_small/8/80111/5766160-actioncomics976-gary-frank.jpg",
+        "catchphrase": "I'm super!"
+    },
+    {
+        "name": "Supergirl",
+        "image": "https://static.comicvine.com/uploads/scale_small/1/14487/6239305-supergirl.jpg",
+        "catchphrase": "I'm better than superman!"
+    },
+    {
+        "name": "Thing",
+        "image": "https://static.comicvine.com/uploads/scale_small/14/149570/4171373-4171069-fanfour015_char_var.jpg",
+        "catchphrase": "I'm a thing!"
+    },
+    {
+        "name": "Wolverine",
+        "image": "https://static.comicvine.com/uploads/scale_small/11125/111253019/6299533-old_man_logan_vol_2_39_textless.jpg",
+        "catchphrase": "I've got claws!"
+    }
+]
