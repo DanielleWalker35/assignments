@@ -27,7 +27,7 @@ body {
 
 .topImg {
     z-index: 1;
-    /* border: 2px solid green; */
+    border: 2px solid green;
     height: 250px;
     width: 100%;
     display: block;
@@ -35,7 +35,7 @@ body {
     background: url(contours2x.png), url(gridlines.png), url(noise.png), url(huntington.jpg);
     background-size: 50%, 60%, auto, cover;
     background-attachment: fixed, fixed, scroll, scroll;
-    background-repeat: repeat, repeat, no-repeat, no-repeat;
+    background-repeat: repeat, repeat, repeat, no-repeat;
     background-position: 0 0, 0 -65%, 0 0, 0 50%;
 }
 
@@ -52,15 +52,16 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
+    /* justify-content: space-around; */
     align-items: center;
     line-height: 1.25;
-    /* border: 2px solid tomato; */
+    border: 2px solid tomato;
     border-top: 10px solid rgba(19, 67, 71, 0.9);
 }
 
 header {
-    /* border: 1px solid blue; */
-    width: 100%;
+    border: 1px solid blue;
+    /* width: 100%; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,12 +70,15 @@ header {
 .circlePic {
     /* border: 1px solid purple; */
     margin-top: 4%;
+    position: relative;
     background-image: url(enso.svg);
-    background-size: contain;
-    width: 52px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 52px; 
     height: 52px;
     opacity: 0.7;
     margin-bottom: 1.5%;
+    z-index: 6;
 }
 
 .para {
@@ -86,7 +90,7 @@ header {
     font-style: normal;
     font-size: 32px;
     color: white;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .beauty {
@@ -104,38 +108,35 @@ header {
 
 nav {
     height: 70px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     width: 100%;
     grid-area: nav;
     z-index: 5;
     background-color: rgba(255, 255, 255, 0.25);
-    /* padding: 3.5%; */
-    /* text-align: center; */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .navLink {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     font-family: "Julius Sans One";
     color: rgba(255, 255, 255, 0.65);
     font-size: 18px;
-    /* line-height: 55px; */
-    /* padding-top: 4%; */
-
+    /* height: 100%; */
 }
 
-.indicator{
-    /* border: 1px solid black; */
+.indicator {
+    border: 1px solid black;
     color: rgba(255, 255, 255, 0.65);
     font-family: 'Verde Moderna';
     font-size: 300%;
     font-style: normal;
     -webkit-font-smothing: antialiased;
 }
-.inLeft{
-opacity:0;
+
+.inLeft {
+    opacity: 0;
 }
 
 .about,
@@ -153,9 +154,9 @@ opacity:0;
 p {
     padding-bottom: 1.5%;
 }
-.remove{
-    opacity: 0;
-    font-size: 0px;
+
+.remove {
+    display: none;
 }
 
 .about {
@@ -163,7 +164,7 @@ p {
     position: relative;
     z-index: 5;
     /* border: 1px solid black; */
-    padding-top: 8%;
+    padding-top: 6%;
     grid-area: abt;
 }
 
@@ -192,7 +193,7 @@ h3 {
     font-size: 22px;
     font-family: "Julius Sans One";
     font-weight: 100;
-    padding-top: 4.5%;
+    padding-top: 5.5%;
     padding-bottom: 1%;
 }
 
@@ -243,8 +244,8 @@ footer {
 .topFooter {
     display: flex;
     flex-direction: column;
-    padding-left: 10.5%;
-    padding-right: 10.5%;
+    /* padding-left: 10.5%; */
+    /* padding-right: 10.5%; */
     font-style: italic;
     font-size: 26px;
 }
@@ -252,9 +253,11 @@ footer {
 .footParagraph {
     color: rgba(255, 255, 255, 0.4);
     line-height: 165%;
-    padding-top: 8.5%;
+    padding-top: 7%;
     flex: 1;
-    padding-bottom: 8.5%;
+    padding-bottom: 7%;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 .footerLinks {
@@ -262,23 +265,21 @@ footer {
 }
 
 .solidLine {
-    font-size: 40px;
+    font-size: 35px;
     text-align: center;
     font-family: "Verde Moderna";
     bottom: 0;
     width: 100%;
     background-color: #134347;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding-left: 7%;
-    padding-right: 7%;
-    padding-top: 8.5%;
-    padding-bottom: 8.5%;
+    padding: 7%;
 }
 
 .character {
     color: rgba(255, 255, 255, 0.5);
+    padding: 3%;
 }
 
 .art {
@@ -292,13 +293,8 @@ footer {
     grid-area: art;
     padding: 0;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     list-style-type: none;
-}
-
-li.artLi {
-    font-size: 14px;
 }
 
 li {
@@ -307,8 +303,12 @@ li {
     color: #c0cac3;
 }
 
+li.artLi {
+    font-size: 16px;
+}
+
 .artLi {
-    /* font-size: 20px; */
+    font-size: 14px;
     /* border: 1px solid black; */
     padding-top: 8%;
     padding-bottom: 8%;
@@ -348,37 +348,122 @@ a {
     border-top: .5px solid #a0b9ad;
     padding: 0;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     list-style-type: none;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .linksLi {
+    display: inline-block;
     padding-top: 7.5%;
     padding-bottom: 7.5%;
     border-bottom: .5px solid #a0b9ad;
 }
 
+@media(min-width: 500px) {
+    .headerBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: auto;
+        padding: 7% 7% 7% 20%;
+    }
+    header {
+        padding-bottom: 4%;
+    }
+
+    .para {
+        padding: 0;
+        margin-left: 4%; 
+    }
+    .footParagraph {
+        padding: 9% 5% 9% 5%;
+        line-height: 1.75;
+    }
+    .solidLine {
+        justify-content: space-between;
+        font-size: 50px;
+        padding: 4%;
+    }
+    .artLi {
+        padding: 8% 3% 8% 20%;
+    }
+    .linksLi{
+        padding: 8.5% 20% 8.5% 20%;  
+    }
+}
+@media (min-width: 600px){
+    .headerBox{
+        padding: 2% 9% 2% 9%;
+    }
+    
+.zenGarden{
+    font-size: 40px;
+}
+.circlePic{
+    width: 80px;
+    height: 80px;
+}
+    .remove{
+    display: inherit;
+}
+.linksLi{
+    padding: 7% 20% 7% 20%;  
+}
+}
+
 @media (min-width: 1130px) {
     .topImg {
-        height: 155px;
+        height: 310px;
+        background-size: 40%, 30%, auto, cover;
+        box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.3);
+    }
+    .headerBox{
+        height:310px;
+
+    }
+    .circlePic{
+        width: 140px;
+        height: 140px;
+    }
+    .zenGarden{
+        font-size: 52px;
+    }
+    .beauty{
+        font-size: 30px;
+        text-align: left;
+    }
+    .css.hdr{
+        font-size: 26px;
+    }
+    nav{
+        margin: 30% 0% 0% 0%;
+        background-color: rgba(255, 255, 255, 0)
+    }
+    .navLink{
+        font-size: 18px;
+        /* border-right: 1px solid rgba(0,0,0,0.3); */
+        width: 100%;
+        text-align: center;
+        /* align-items: center; */
+        padding: 12px 0 0 0;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    .about{
+        z-index: 0;
     }
     .container {
         grid-template-columns: repeat(9, 1fr);
         grid-template-rows: minmax(100px, auto);
         grid-template-areas: "hdr hdr hdr hdr hdr hdr nav nav nav" "abt abt abt abt abt abt art art art" "par par par par par par men men men" "req req req req req req .   .   ." "ftr ftr ftr ftr ftr ftr ftr ftr ftr";
     }
-    .headerBox {
-        height: 155px;
-    }
+    
     .paraText {
         font-size: 10px;
     }
     .about,
     .participation,
     .requirements {
-        /* padding-top: 2%; */
         padding-bottom: 3.5%;
         padding-left: 15%;
         padding-right: 9%;
@@ -386,9 +471,7 @@ a {
     .art {
         display: block;
         font-size: 11px;
-        /* grid-template-columns: 1fr; */
         padding: 20% 30% 40% 10%;
-        /* height: 400px; */
     }
     li {
         padding: 0;
@@ -397,10 +480,7 @@ a {
         display: block;
         border-top: none;
         padding: 20% 30% 40% 20%;
-        /* grid-template-columns: 1fr; */
         font-size: 10.5px;
-        /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-areas: "men1" "men2" "men3" "men4" "men5"; */
     }
     .menu {
         background-attachment: fixed;

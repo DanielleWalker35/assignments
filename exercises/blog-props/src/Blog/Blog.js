@@ -4,8 +4,9 @@ import BlogList from "./BlogList/BlogList";
 import Footer from "./Footer/Footer";
 
 function Blog() {
+   
     return (
-        <div>
+        <div >
           <Header></Header>
           <BlogList></BlogList>
           <Footer></Footer>

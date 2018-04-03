@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(./Open_Sans/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: "Open Sans Light";
+    src: url(./Open_Sans/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: "Open Sans Extra Bold";
+    src: url(./Open_Sans/OpenSans-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: "Open Sans Bold";
+    src: url(./Open_Sans/OpenSans-Bold.ttf);
+}
+
+.headerDiv {
+    background-image: url(https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 535px;
+    text-align: center;
+    color: white;
+}
+
+.overlay {
+    height: 535px;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+h1 {
+    font-family: "Open Sans Extra Bold";
+    font-size: 80px;
+    margin-bottom: 3px;
+}
+h3{
+    font-family: "Open Sans Light";
+    font-size: 25px;
+    font-weight: 300;
+    
+}
+.headingWords{
+    /* border: 1px solid black; */
+    padding-top: 10%;
+}
+
+.navBar {
+    /* border: 1px green solid;  */
+    display: flex;
+    justify-Content: space-around;
+}
+
+.navText {
+    /* border: 1px solid black; */
+    margin: 15px;
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+.linkText {
+    font-family: "Open Sans Extra Bold";
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.linkText.one {
+    font-size: 20px;
+    font-family: "Open Sans Extra Bold";
+    line-height: 30px;
+    /* font-style: bold; */
+}
