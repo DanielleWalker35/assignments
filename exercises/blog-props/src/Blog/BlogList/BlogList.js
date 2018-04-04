@@ -30,9 +30,11 @@ function BlogList () {
     ]
     const blogLis = blogData.map((article, i) => <BlogPost key= {article.title +i} post={article} />)
     return(
-        <div>
+        <div className="mainBlog">
             {blogLis}
-            <button>OLDER POSTS</button>
+            <div className="buttonContainer">
+            <button>OLDER POSTS &#8594; </button>
+            </div>
         </div>
     )
 }

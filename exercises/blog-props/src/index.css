@@ -7,6 +7,7 @@
     font-family: "Open Sans";
     src: url(./Open_Sans/OpenSans-Regular.ttf);
 }
+
 @font-face {
     font-family: "Open Sans Light";
     src: url(./Open_Sans/OpenSans-Light.ttf);
@@ -20,6 +21,12 @@
 @font-face {
     font-family: "Open Sans Bold";
     src: url(./Open_Sans/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Lora Italic';
+    font-style: italic;
+    src: url(./Lora/Lora-Italic.ttf);
 }
 
 .headerDiv {
@@ -41,19 +48,18 @@ h1 {
     font-size: 80px;
     margin-bottom: 3px;
 }
-h3{
+
+h3 {
     font-family: "Open Sans Light";
     font-size: 25px;
     font-weight: 300;
-    
 }
-.headingWords{
-    /* border: 1px solid black; */
+
+.headingWords {
     padding-top: 10%;
 }
 
 .navBar {
-    /* border: 1px green solid;  */
     display: flex;
     justify-Content: space-around;
 }
@@ -61,8 +67,6 @@ h3{
 .navText {
     /* border: 1px solid black; */
     margin: 15px;
-    /* display: flex;
-    justify-content: space-between; */
 }
 
 .linkText {
@@ -80,4 +84,80 @@ h3{
     font-family: "Open Sans Extra Bold";
     line-height: 30px;
     /* font-style: bold; */
+}
+
+.mainBlog {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8% 0 0 0;
+}
+
+.blogPosts {
+    width: 65%;
+    line-height: 1.15;
+    margin: 1.5%;
+    border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+h2 {
+    font-family: "Open Sans Extra Bold";
+    font-size: 36px;
+}
+
+h4 {
+    font-family: "Open Sans Light";
+    font-size: 28px;
+    margin: 1% 0 1% 0;
+}
+
+p {
+    font-family: "Lora Italic";
+    font-size: 18px;
+    color: #868e96;
+    margin: 2% 0 4% 0;
+}
+
+.author {
+    color: black;
+}
+
+.author:hover {
+    text-decoration: underline;
+    color: #0085a1;
+}
+
+.buttonContainer {
+    display: block;
+    width: 65%;
+    margin-bottom: 1.5%;
+}
+
+button {
+    background-color: #0085a1;
+    border-color: #0085a1;
+    font-family: "Open Sans Extra Bold";
+    color: white;
+    font-size: 14px;
+    padding: 15px 25px;
+    float: right;
+}
+footer{
+    border-top: 1px solid rgb(226, 226, 226);
+    text-align: center;
+   
+}
+.socialIcons{
+    margin: 6% 5% 1% 5%;
+}
+.images{
+    height:45px;
+    margin: 1.5%;
+}
+.copyright{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    margin-bottom: 6%;
+    color: rgb(117, 117, 117);
 }
