@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+@font-face{
+    font-family: LatoBold;
+    src: url(Lato/Lato-Bold.ttf);
+}
+
+.app-wrapper {
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-areas: "hdr" "con" "ftr";
+    height: 120vh;
+    font-family: LatoBold;
+}
+
+header {
+    grid-area: hdr;
+   
+}
+
+h1 {
+    height: 200px;
+    width: 100%;
+    background-image: url(https://cdn.pixabay.com/photo/2017/02/12/11/26/refinery-2059775_1280.jpg);
+    background-size: cover;
+    background-position: -50%;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   opacity: .8;
+    /* border: 1px black solid; */
+}
+.headerText{
+    font-size: 60px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    line-height: 1.5;
+/* border: 1px black solid; */
+}
+
+.navBar {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.content-wrapper {
+    grid-area: con;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%;
+}
+.familyPic{
+    background-image: url(family.JPG);
+    height: 200px;
+    width: 500px;
+    background-size: cover;
+    background-position: center;
+    border: 3px black solid;
+    
+}
+p{
+    margin:1% 5% 1% 5%;
+    line-height: 2;
+}
+h2{
+    margin: 1%;
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5% 0 5%;
+    grid-area: ftr;
+    background-color: rgb(177, 177, 177);
+}
