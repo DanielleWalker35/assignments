@@ -24,7 +24,7 @@ function onHit(party, party2) {
     if (penguins.population > 0 && communisits.population > 0) {
         sendNuke(party2, party, onHit, onMiss);
     } else {
-        console.log("check point");
+        // console.log("check point");
     }
 }
 
@@ -33,7 +33,7 @@ function onMiss(party, party2) {
     if (penguins.population > 0 && communisits.population > 0) {
         sendNuke(party2, party, onHit, onMiss);
     } else {
-        console.log("check point2");
+        // console.log("check point2");
 
     }
 }

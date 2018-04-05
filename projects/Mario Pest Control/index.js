@@ -8,5 +8,5 @@ function multiplyNum(event) {
     var p = document.getElementById("totalPrice");
 
     answer = ((x * 5) + (y * 7) + (z * 11));
-    p.innerHTML = answer;
+    p.innerHTML = (answer + " coins");
 }

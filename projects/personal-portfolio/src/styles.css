@@ -1,0 +1,67 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+    font-family: "Libre Franklin";
+}
+@font-face{
+    font-family: "Libre Franklin";
+    src: url(./Libre_Franklin/LibreFranklin-Regular.ttf);
+}
+@font-face{
+    font-family: "Libre Franklin Bold";
+    src: url(./Libre_Franklin/LibreFranklin-Bold.ttf);
+}
+.home{
+    text-align: center;
+    margin:10%;
+    color:whitesmoke;
+    font-family: "Libre Franklin Bold";
+}
+h1{
+    font-size: 80px;
+    
+}
+h2{
+    font-size: 40px;
+}
+.app-wrapper{
+    display: flex;
+    justify-content: space-between;
+    background-image: url(water.jpg);
+    background-size: cover;
+}
+.content-wrapper{
+    width: 100%;
+
+}
+
+.leftLinks{
+    text-decoration: none;
+    -webkit-transform: rotateZ(-90deg) translateX(50%);
+    margin: 20px;
+    color: whitesmoke;
+    font-size: 20px;
+}
+.navBar{
+    height: 100vh;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* background-color: darkgray; */
+}
+.rightLinks{
+    text-decoration: none;
+    -webkit-transform: rotateZ(90deg) translateX(-30%);
+    color: whitesmoke;
+    font-size: 20px;
+    white-space: nowrap;
+}
+footer{
+    height: 100vh;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* background-color: darkgray; */
+}
