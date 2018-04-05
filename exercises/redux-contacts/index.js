@@ -25,8 +25,19 @@ const reducer = (state = initialState, action) => {
             return {
                 contacts: state.contacts.filter(contact => contact.name !== action.name)
             }
+        case "EDIT_CONTACT":
+            return {
+                contacts: state.contacts.map(contact => {
+                    if (contact.name === action.name) {
+                        return { ...contact, ...action.editedContact }
+                    } else {
+                        return contact
+                    }
+                })
+            }
         default:
             return state;
+
     }
 };
 const store = redux.createStore(reducer);
@@ -52,7 +63,17 @@ const removeContact = name => {
     })
 }
 
-removeContact("Danielle Walker");
+// removeContact("Danielle Walker");
+
+const editContact = (name, editedContact) => {
+    store.dispatch({
+        type: "EDIT_CONTACT",
+        name,
+        editedContact
+    })
+}
+
+editContact("Danielle Walker", {name: "Barb"});
 
 // store.dispatch(add);
 // store.dispatch(remove);
