@@ -73,7 +73,7 @@ const editContact = (name, editedContact) => {
     })
 }
 
-editContact("Danielle Walker", {name: "Barb"});
+editContact("Danielle Walker", {name: "Barb", phone: "555-456-8888"});
 
 // store.dispatch(add);
 // store.dispatch(remove);

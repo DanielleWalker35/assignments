@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 400px;
+    background-image: url(https://www.planwallpaper.com/static/images/rendition1.img.jpg);
+    background-position: 0 -1%;
+    background-size: cover;
+    color: whitesmoke;
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.characterBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "sel sel sel sel sel chr chr chr chr chr chr chr";
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe41CWy216X4_zsJ6P3S3dr-v9Q9txI1ziQNJKwcWlKBEtom9Y);
+    background-repeat: repeat;
+}
+
+.pickCharacter {
+    grid-area: sel;
+    padding: 8%;
+    background-color: rgb(255, 24, 24);
+}
+
+.pickedCharacter {
+    grid-area: chr;
+    margin: 15%;
+    border: 5px solid black;
+    padding:3%;
+    background-color: whitesmoke;
+
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom:2%;
+}
+p{
+    line-height: 2;
+    font-size: 18px;
+}
+.characterName{
+    font-size: 24px;
+}
+.characterName:visited{
+color: white; 
+}
