@@ -26,11 +26,13 @@ class CharacterInfo extends Component {
                 })
             })
     }
+    
 
     render() {
-        const { name, height, mass, hair_color, skin_color, eye_color, birth_year, gender, url} = this.state.character;
+        
+        const { name, height, mass, hair_color, skin_color, eye_color, birth_year, gender} = this.state.character;
         return(
-            <div>
+            <div className="characterDeets">
                 <h1>{name}</h1>
                 <p>Height: {height}</p>
                 <p>Mass: {mass}</p>

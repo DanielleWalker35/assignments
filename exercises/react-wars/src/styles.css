@@ -18,7 +18,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "sel sel sel sel sel chr chr chr chr chr chr chr";
+    grid-template-areas: "sel sel sel sel chr chr chr chr chr chr chr chr chr";
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe41CWy216X4_zsJ6P3S3dr-v9Q9txI1ziQNJKwcWlKBEtom9Y);
     background-repeat: repeat;
 }
@@ -35,7 +35,6 @@ header {
     border: 5px solid black;
     padding:3%;
     background-color: whitesmoke;
-
 }
 
 h1 {
@@ -52,3 +51,17 @@ p{
 .characterName:visited{
 color: white; 
 }
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%; 
+    }
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+ .characterDeets{
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
