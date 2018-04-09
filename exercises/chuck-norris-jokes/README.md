@@ -1,15 +1,3 @@
-
-## React Wars
-
-Build a simple Single Page Application that implements React Router with axios.
-
-1. Create a sidebar of Link components displaying the character names retrieved from the star wars api.
-
-Use this URL: https://swapi.co/api/people/
-
-2. Using a Switch component, display each character's physical characteristics on a separate view for each link. You'll have to make a new request to the endpoint specified in the "url" property of each character to display that character's info.
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

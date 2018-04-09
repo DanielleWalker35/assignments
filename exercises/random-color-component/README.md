@@ -1,3 +1,8 @@
+
+## Random Color Component
+
+- Create a component that uses axios to GET a random color from the random color API and sets that component's background color to that random color.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

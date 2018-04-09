@@ -1,3 +1,12 @@
+
+## React Roto-Router
+
+Make a mock SPA (Single Page Application) for a plumbing company website.
+
+- Your website must contain a navbar, footer, and a main view section. Your navbar must contain at least 3 Link tags to at least 3 different views (for example Home, About, and Services).
+
+- The goal is to become proficient in using the three basic React-Router components: Link,Switch, and Route.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

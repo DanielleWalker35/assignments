@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-image: url(http://getwallpapers.com/wallpaper/full/b/4/e/738312-chuck-norris-wallpaper-1920x1080-free-download.jpg);
+    background-position: 0 -.1%;
+    background-size: cover;
+    height: 500px; 
+}
+.jokeBox{
+    text-align: center;
+}
+.joke{
+    margin: 2%;
+    font-size: 30px;
+    border: 2px solid black;
+}
+h2{
+    font-size: 30px;
+    margin:2%;
+}
+button{
+    width: 100px;
+    height: 10%;
+    font-size: 20px;
+    margin-bottom: 5%;
+}
