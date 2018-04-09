@@ -36,7 +36,7 @@ class Form extends Component {
     }
     canBeSubmitted() {
         const { firstName, lastName, placeOfBirth, email, phone, favFood, comments } = this.state.inputs;
-        const numbers =  /^[0-9]+$/;
+        const numbers = /^[0-9]+$/;
         return (
             firstName.length > 3 && lastName.length > 3 && placeOfBirth.length > 3 && email.length > 3 && phone.match(numbers) && phone.length > 9 && favFood.length > 3 && comments.length > 3
         );
@@ -48,23 +48,25 @@ class Form extends Component {
         }
         this.props.addBadge(this.state.inputs);
         this.setState(this.initialState);
-        
+
     }
 
     render() {
         const isEnabled = this.canBeSubmitted();
         const { firstName, lastName, placeOfBirth, email, phone, favFood, comments } = this.state.inputs
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input onChange={this.handleChange} name="firstName" value={firstName} type="text" placeholder="First Name" />
-                <input onChange={this.handleChange} name="lastName" value={lastName} type="text" placeholder="Last Name" />
-                <input onChange={this.handleChange} name="placeOfBirth" value={placeOfBirth} type="text" placeholder="Place of Birth" />
-                <input onChange={this.handleChange} name="email" value={email} type="text" placeholder="Email" />
-                <input onChange={this.handleChange} name="phone" value={phone} type="text" placeholder="Phone" />
-                <input onChange={this.handleChange} name="favFood" value={favFood} type="text" placeholder="Favorite Food" />
-                <input onChange={this.handleChange} name="comments" value={comments} type="text" placeholder="Tell us about yourself" />
-                <button id="button" disabled={!isEnabled}>Submit</button>
-            </form>
+            <div className="formBox">
+                <form className="form" onSubmit={this.handleSubmit}>
+                    <input onChange={this.handleChange} name="firstName" value={firstName} type="text" placeholder="First Name" />
+                    <input onChange={this.handleChange} name="lastName" value={lastName} type="text" placeholder="Last Name" />
+                    <input onChange={this.handleChange} name="placeOfBirth" value={placeOfBirth} type="text" placeholder="Place of Birth" />
+                    <input onChange={this.handleChange} name="email" value={email} type="text" placeholder="Email" />
+                    <input onChange={this.handleChange} name="phone" value={phone} type="text" placeholder="Phone" />
+                    <input onChange={this.handleChange} name="favFood" value={favFood} type="text" placeholder="Favorite Food" />
+                    <textarea className="comments" rows="8" cols="50" onChange={this.handleChange} name="comments" value={comments} placeholder="Tell us about yourself..."></textarea>
+                    <button id="button" disabled={!isEnabled}>Submit</button>
+                </form>
+            </div>
         )
     }
 }

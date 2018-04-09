@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.formBox {
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 3%;
+    width: 60%;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input {
+    width: 45%;
+    border: 3px solid black;
+    margin: 2%;
+    font-size: 20px;
+}
+
+.comments {
+    width: 94%;
+    border: 3px solid black;
+    margin: 2%;
+    font-size: 20px;
+}
+.comments::placeholder{
+    color: black;
+    font-weight: 500;
+}
+
+button {
+    padding: 1% 4%;
+    margin-bottom: 2%;
+    border: 3px solid black;
+    border-radius: 5px;
+    color: black;
+    background-color: rgb(201, 200, 200);
+    font-size: 20px;
+}
+
+.oneBadge{
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 60%;
+    margin: auto;
+    margin-top: 5%;
+  
+}
+.badge{
+    display: flex;
+    flex-wrap: wrap;
+}
+p{
+    width: 45%;
+    margin: 2%;
+    font-size: 20px;
+}
+h1{
+    padding:2%;
+}
+.comments2{
+    width: 94%;
+    height: 100px;
+    border: 2px solid black;
+    margin: 2%;
+    font-size: 20px;
+    padding: .5%;
+}
