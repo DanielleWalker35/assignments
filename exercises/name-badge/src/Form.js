@@ -14,14 +14,14 @@ class Form extends Component {
                 email: "",
                 phone: "",
                 favFood: "",
-                comments: "",
+                comments: ""
             }
         }
         this.state = this.initialState;
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleClick = this.handleClick.bind(this);
     }
+
     handleChange(e) {
         const { name, value } = e.target;
         this.setState(prevState => {
@@ -48,6 +48,7 @@ class Form extends Component {
         }
         this.props.addBadge(this.state.inputs);
         this.setState(this.initialState);
+        
     }
 
     render() {

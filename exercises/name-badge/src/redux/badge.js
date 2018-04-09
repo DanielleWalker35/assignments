@@ -1,5 +1,5 @@
 const initialState ={
-    data:[]
+    data:[],
 }
 
 const badgeReducer = (state=initialState, action)=> {

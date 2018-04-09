@@ -4,7 +4,7 @@ import OneBadge from "./OneBadge";
 
 function BadgeList(props) {
     console.log(props);
-    const badgeComponent = props.data.map((badge, i) => <OneBadge key={badge.firstName + i} {...badge} />)
+    const badgeComponent = props.data.map((badge, i) => <OneBadge key={badge.firstName + i} {...badge} index = {i} />)
     return (
         <div>
             {badgeComponent}
