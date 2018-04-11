@@ -2,35 +2,36 @@ import axios from "axios";
 
 const initialState = {
     data: [],
-    year: "1993",
+    // year: "1993",
     // state: "UT",
+    zip: "",
     loading: true,
     errMsg: "",
 }
 this.state = this.initialState;
 
-console.log(initialState);
-const fbiapiStateURL = "https://api.usa.gov/crime/fbi/ucr/offenses/count/states/UT/location_name?page=1&per_page=10&output=json&api_key=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
+// console.log(initialState);
+// const fbiapiStateURL = "https://api.usa.gov/crime/fbi/ucr/offenses/count/states/UT/location_name?page=1&per_page=10&output=json&api_key=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
 
-const nationalLocationReducer = (state = initialState, action) => {
+const locationReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "GET_LOCATION_NAT":
-            return {
-                ...state,
-                data: action.locations,
-                loading: false,
-            }
+        // case "GET_LOCATION_NAT":
+        //     return {
+        //         ...state,
+        //         data: action.locations,
+        //         loading: false,
+        //     }
         case "ERR_MSG":
             return {
                 ...state,
                 loading: false,
                 errMsg: action.errMsg,
             }
-        case "SELECT_YEAR":
+        case "ENTER_ZIP":
             return {
                 ...state,
                 loading: false,
-                year: action.year,
+                zip: action.zip,
             }
         // case "SELECT_STATE":
         //     return {
@@ -38,7 +39,7 @@ const nationalLocationReducer = (state = initialState, action) => {
         //         loading: false,
         //         state: action.state,
         //     }
-        case "GET_STATE_LOCATIONS":
+        case "GET_MARKET_LOCATIONS":
             return {
                 ...state,
                 data: action.locations,
@@ -48,15 +49,16 @@ const nationalLocationReducer = (state = initialState, action) => {
             return state;
     }
 }
-export const selectYear = event => {
+export const addZip = zip => {
     return {
-        type: "SELECT_YEAR",
-        year: event.target.value
+        type: "ENTER_ZIP",
+        zip
     }
 }
-export const selectState = event => {
+
+export const enteredZip = event => {
     return dispatch => {
-        axios.get("https://api.usa.gov/crime/fbi/ucr/offenses/count/states/" + event.target.value + "/location_name?page=1&per_page=10&output=json&api_key=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv")
+        axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + event.target.value)
             .then(response => {
                 dispatch({
                     type: "GET_STATE_LOCATIONS",
@@ -72,43 +74,45 @@ export const selectState = event => {
     }
 }
 
-const fbiapiURL = "https://api.usa.gov/crime/fbi/ucr/offenses/count/national/location_name?page=1&per_page=10&output=json&api_key=6y5aUhuYQiZoZ2AXs7w6oBv3uMA2tYFrdUgSvR6i";
+// const fbiapiURL = "https://api.usa.gov/crime/fbi/ucr/offenses/count/national/location_name?page=1&per_page=10&output=json&api_key=6y5aUhuYQiZoZ2AXs7w6oBv3uMA2tYFrdUgSvR6i";
 
-export const getLocationNat = () => {
-    return dispatch => {
-        axios.get(fbiapiURL)
-            .then(response => {
-                dispatch({
-                    type: "GET_LOCATION_NAT",
-                    locations: response.data.results
-                })
-            })
-            .catch(err => {
-                dispatch({
-                    type: "ERR_MSG",
-                    errMsg: "Sorry your data is unavailable."
-                })
-            })
-    }
-}
+// export const getLocationNat = () => {
+//     return dispatch => {
+//         axios.get(fbiapiURL)
+//             .then(response => {
+//                 dispatch({
+//                     type: "GET_LOCATION_NAT",
+//                     locations: response.data.results
+//                 })
+//             })
+//             .catch(err => {
+//                 dispatch({
+//                     type: "ERR_MSG",
+//                     errMsg: "Sorry your data is unavailable."
+//                 })
+//             })
+//     }
+// }
 // console.log(state.state);
 
-export const getStateLocation = () => {
+const fmapiURL = "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=20120";
+
+export const getMarketLocations = () => {
     return dispatch => {
-        axios.get(fbiapiStateURL)
+        axios.get(fmapiURL)
             .then(response => {
                 dispatch({
-                    type: "GET_STATE_LOCATIONS",
+                    type: "GET_MARKET_LOCATIONS",
                     locations: response.data.results
                 })
             })
             .catch(err => {
                 dispatch({
                     type: "ERR_MSG",
-                    errMsg: "Sorry your data is unavailable."
+                    errMsg: "Sorry no data is unavailable."
                 })
             })
     }
 }
 
-export default nationalLocationReducer;
+export default locationReducer;

@@ -1,8 +1,8 @@
 import {createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
-import nationalLocationReducer from "./locations.js";
+import locationReducer from "./locations.js";
 
-const store = createStore(combineReducers({natLocations:nationalLocationReducer}), applyMiddleware(thunk));
-// store.subscribe(() => console.log(store.getState()));
+const store = createStore(combineReducers({locations:locationReducer}), applyMiddleware(thunk));
+store.subscribe(() => console.log(store.getState()));
 export default store;
