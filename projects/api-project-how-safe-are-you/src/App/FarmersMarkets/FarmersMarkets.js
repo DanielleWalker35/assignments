@@ -6,6 +6,7 @@ import { getMarketLocations } from "../../redux/locations";
 import MarketLocations from "./MarketLocations";
 import { addZip } from "../../redux/locations";
 import { enteredZip } from "../../redux/locations";
+// import MarketInfo from "./MarketInfo";
 
 class FarmersMarkets extends Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class FarmersMarkets extends Component {
 
     render(props) {
         const { data, loading, errMsg } = this.props;
-        console.log(this.props);
+        // console.log(this.props);
         if (loading) {
             return (
                 <div>...Loading</div>
@@ -40,7 +41,7 @@ class FarmersMarkets extends Component {
                 <div>{errMsg}</div>
             )
         } else {
-            const farmersMarketsComponent = data.map(location => <MarketLocations key={location.id} {...location} />);
+            const farmersMarketsComponent = data.map(location => <MarketLocations key={location.id} {...location} id={location.id} />);
             return (
                 <div>
                     <h1>Enter a valid zip code to find near by Farmer's Markets</h1>
@@ -51,6 +52,7 @@ class FarmersMarkets extends Component {
 
                     <h3>Near by Farmer's Markets</h3>
                     <div>{farmersMarketsComponent}</div>
+                    {/* <MarketInfo></MarketInfo> */}
                     <Link to="/">Home</Link>
                 </div>
             )

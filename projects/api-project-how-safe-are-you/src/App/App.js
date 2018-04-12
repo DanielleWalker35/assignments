@@ -3,8 +3,8 @@ import React from 'react'
 import {Switch, Route} from "react-router-dom";
 
 import Home from "./Home"
-// import NationalLocations from "./NationalLocations/NationalLocations";
 import FarmersMarkets from "./FarmersMarkets/FarmersMarkets";
+import MarketInfo from "./FarmersMarkets/MarketInfo";
 
 function App(props){
     return(
@@ -12,7 +12,7 @@ function App(props){
             <Switch>
                 <Route exact path='/' component={Home}/>
                 <Route path='/farmersMarkets' component={FarmersMarkets}/>
-                {/* <Route path='/nationalLocations' component={NationalLocations}/> */}
+                <Route path='/marketInfo/:id' component={MarketInfo}/> 
             </Switch>
         </div>
     )
