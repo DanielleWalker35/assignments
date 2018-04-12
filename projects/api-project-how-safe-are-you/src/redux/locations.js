@@ -96,6 +96,7 @@ export const getMarketLocations = () => {
 
 // const fminfoapiURL = "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=1012592";
 export const getMarketInfo = id => {
+    console.log(id);
     return dispatch => {
         axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id="+ id)
             .then(response => {

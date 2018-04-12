@@ -12,9 +12,9 @@ class MarketInfo extends Component {
     //     }
     // }
 
-    componentDidMount() {
-        this.props.getMarketInfo();
-    }
+    // componentDidMount() {
+    //     this.props.getMarketInfo();
+    // }
     
     render(props) {
         const { info, loading, errMsg } = this.props;

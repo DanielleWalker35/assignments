@@ -1,22 +1,32 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { getMarketInfo } from "../../redux/locations";
 
+class MarketLocations extends Component {
+    constructor(props) {
+        super(props);
 
-function MarketLocations(props) {
-    // console.log(props)
-    function handleClick(event) {
-        event.preventDefault();
-        this.props.getMarketInfo(props.id);
+        this.handleClick = this.handleClick.bind(this);
+    };
+   
+    handleClick(event) {
+        // event.preventDefault();
+        this.props.getMarketInfo(this.props.id);
         this.setState(this.initialState);
-    }
-    return (
-        <div>
+    };
+    render(props) {
+        console.log(this.props)
+        return (
             <div>
-                <p>
-                    <Link onClick={handleClick} to={`/marketinfo/${props.id}`}>{props.marketname}</Link>
-                </p>
+                <div>
+                    <p>
+                        <Link onClick={this.handleClick} to={`/marketinfo/${this.props.id}`}>{this.props.marketname}</Link>
+                    </p>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
-export default MarketLocations;
+
+export default connect(null, { getMarketInfo })(MarketLocations);

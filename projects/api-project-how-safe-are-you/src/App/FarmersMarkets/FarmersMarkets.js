@@ -6,7 +6,6 @@ import { getMarketLocations } from "../../redux/locations";
 import MarketLocations from "./MarketLocations";
 import { addZip } from "../../redux/locations";
 import { enteredZip } from "../../redux/locations";
-// import MarketInfo from "./MarketInfo";
 
 class FarmersMarkets extends Component {
     constructor(props) {
@@ -52,7 +51,6 @@ class FarmersMarkets extends Component {
 
                     <h3>Near by Farmer's Markets</h3>
                     <div>{farmersMarketsComponent}</div>
-                    {/* <MarketInfo></MarketInfo> */}
                     <Link to="/">Home</Link>
                 </div>
             )

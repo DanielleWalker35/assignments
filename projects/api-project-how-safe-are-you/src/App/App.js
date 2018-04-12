@@ -12,7 +12,7 @@ function App(props){
             <Switch>
                 <Route exact path='/' component={Home}/>
                 <Route path='/farmersMarkets' component={FarmersMarkets}/>
-                <Route path='/marketInfo/:id' component={MarketInfo}/> 
+                <Route path='/marketInfo/:marketId' component={MarketInfo}/> 
             </Switch>
         </div>
     )
