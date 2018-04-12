@@ -2,7 +2,6 @@
 import { Link } from "react-router-dom";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { getMarketLocations } from "../../redux/locations";
 import MarketLocations from "./MarketLocations";
 import { addZip } from "../../redux/locations";
 import { enteredZip } from "../../redux/locations";
@@ -15,12 +14,11 @@ class FarmersMarkets extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.initialState;
     }
-    componentDidMount(props) {
-        this.props.getMarketLocations();
-    };
+
     handleChange(e) {
         this.props.addZip(e.target.value);
-        // console.log();
+        this.setState(this.initialState);
+
     }
     handleSubmit(event) {
         event.preventDefault();
@@ -30,7 +28,6 @@ class FarmersMarkets extends Component {
 
     render(props) {
         const { data, loading, errMsg } = this.props;
-        // console.log(this.props);
         if (loading) {
             return (
                 <div>...Loading</div>
@@ -42,16 +39,23 @@ class FarmersMarkets extends Component {
         } else {
             const farmersMarketsComponent = data.map(location => <MarketLocations key={location.id} {...location} id={location.id} />);
             return (
-                <div>
-                    <h1>Enter a valid zip code to find near by Farmer's Markets</h1>
-                    <form className="form1" onSubmit={this.handleSubmit} >
-                        <input type="text" placeholder="Enter Zip Code" onChange={this.handleChange} />
-                        <button>Submit</button>
-                    </form>
-
-                    <h3>Near by Farmer's Markets</h3>
-                    <div>{farmersMarketsComponent}</div>
-                    <Link to="/">Home</Link>
+                <div className="marketsWrapper">
+                    <div className="marketsHeader">
+                        <h1 className="marketsH1">Enter a zip code to find near by Farmer's Markets</h1>
+                        <form className="form1" onSubmit={this.handleSubmit} >
+                            <input type="text" value={this.props.zip} placeholder="Enter Zip Code" onChange={this.handleChange} />
+                            <button className="marketSubmit">Submit</button>
+                        </form>
+                    </div>
+                    <h3 className="marketsH3">Farmer's Markets near {this.props.zip}</h3>
+                    <div className="farmersMarketsListWrapper">
+                        <div className="listOfMarkets">{farmersMarketsComponent}</div>
+                        <div className="imageWrapper">
+                            <div className="marketImage"></div>
+                            <div className="marketImageBerries"></div>
+                        </div>
+                    </div>
+                    <Link className="linkHome" to="/">Return Home</Link>
                 </div>
             )
 
@@ -62,4 +66,4 @@ class FarmersMarkets extends Component {
 const mapStateToProps = state => {
     return state.locations;
 }
-export default connect(mapStateToProps, { getMarketLocations, addZip, enteredZip })(FarmersMarkets);
+export default connect(mapStateToProps, { addZip, enteredZip })(FarmersMarkets);

@@ -8,7 +8,7 @@ import MarketInfo from "./FarmersMarkets/MarketInfo";
 
 function App(props){
     return(
-        <div>
+        <div className="appWrapper">
             <Switch>
                 <Route exact path='/' component={Home}/>
                 <Route path='/farmersMarkets' component={FarmersMarkets}/>
