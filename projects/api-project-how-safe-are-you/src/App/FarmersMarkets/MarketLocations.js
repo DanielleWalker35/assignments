@@ -5,6 +5,7 @@ function MarketLocations(props) {
     return (
         <div>
             <div>{props.marketname}</div>
+            <div>{props.id}</div>
         </div>
     )
 }

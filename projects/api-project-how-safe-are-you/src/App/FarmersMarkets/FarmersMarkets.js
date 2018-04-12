@@ -8,20 +8,29 @@ import { addZip } from "../../redux/locations";
 import { enteredZip } from "../../redux/locations";
 
 class FarmersMarkets extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
+
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = this.initialState;
     }
     componentDidMount(props) {
         this.props.getMarketLocations();
     };
     handleChange(e) {
         this.props.addZip(e.target.value);
+        // console.log();
+    }
+    handleSubmit(event) {
+        event.preventDefault();
+        this.props.enteredZip(this.props.zip);
+        this.setState(this.initialState);
     }
 
     render(props) {
         const { data, loading, errMsg } = this.props;
-
+        console.log(this.props);
         if (loading) {
             return (
                 <div>...Loading</div>
@@ -31,11 +40,11 @@ class FarmersMarkets extends Component {
                 <div>{errMsg}</div>
             )
         } else {
-            const farmersMarketsComponent = data.map(location => <MarketLocations key={location.id} {...location} />);        
+            const farmersMarketsComponent = data.map(location => <MarketLocations key={location.id} {...location} />);
             return (
                 <div>
                     <h1>Enter a valid zip code to find near by Farmer's Markets</h1>
-                    <form className="form1" onSubmit={enteredZip} >
+                    <form className="form1" onSubmit={this.handleSubmit} >
                         <input type="text" placeholder="Enter Zip Code" onChange={this.handleChange} />
                         <button>Submit</button>
                     </form>
@@ -53,4 +62,4 @@ class FarmersMarkets extends Component {
 const mapStateToProps = state => {
     return state.locations;
 }
-export default connect(mapStateToProps, { getMarketLocations, addZip })(FarmersMarkets);
+export default connect(mapStateToProps, { getMarketLocations, addZip, enteredZip })(FarmersMarkets);

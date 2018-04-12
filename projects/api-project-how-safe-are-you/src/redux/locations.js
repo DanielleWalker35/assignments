@@ -56,12 +56,14 @@ export const addZip = zip => {
     }
 }
 
-export const enteredZip = event => {
+export const enteredZip = zip => {
+    // event.preventDefault();
+    console.log(zip);
     return dispatch => {
-        axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + event.target.value)
+        axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip)
             .then(response => {
                 dispatch({
-                    type: "GET_STATE_LOCATIONS",
+                    type: "GET_MARKET_LOCATIONS",
                     locations: response.data.results
                 })
             })
