@@ -30,14 +30,14 @@ class FarmersMarkets extends Component {
         const { data, loading, errMsg } = this.props;
         if (loading) {
             return (
-                <div>...Loading</div>
+                <div className="loading">...Loading</div>
             )
         } else if (errMsg) {
             return (
                 <div>{errMsg}</div>
             )
         } else {
-            const farmersMarketsComponent = data.map(location => <MarketLocations key={location.id} {...location} id={location.id} />);
+            const farmersMarketsComponent = data.map((location, i) => <MarketLocations key={location.id + i} {...location} id={location.id} />);
             return (
                 <div className="marketsWrapper">
                     <div className="marketsHeader">

@@ -1,63 +1,71 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getMarketInfo } from "../../redux/locations";
-// import Products from "./Products";
-
+import { setCurrentId } from "../../redux/locations";
 
 class MarketInfo extends Component {
     constructor(props) {
         super();
-
-
     }
     componentDidMount(props) {
         this.props.getMarketInfo(this.props.match.params.marketId);
-        // this.setState(this.initialState);
+        this.props.setCurrentId(this.props.match.params.marketId);
     }
     //write a method to parse the string
     parseStr(str) {
-        if (!str) return;
+        if (!str) return "No information provided";
         return str.split(";").map((product, i) => <li key={product + i}>{product}</li>);
     };
 
     filterStr(str) {
-        if (!str) return;
-        return str.replace(/<br>/g, "");
+        console.log(str);
+        if (str === " <br> <br> <br> " || str === undefined) {
+            return "No information provided";
+        } else {
+            return (str.replace(/<br>/g, ""));
+        }
     }
+
     filterGoogle(str) {
         if (!str) return;
         return str.replace(/ *\([^)]*\) */g, "");
     }
 
     render(props) {
-        // console.log(this.props.data.id);
-        const { info, loading, errMsg } = this.props;
-
-        // const productLis = arrOfStrings.map((product, i) => <li key={product + i} {...product} />)
+        // console.log(this.props.data);
+        const { info, loading, errMsg, data, id } = this.props;
+        let marketName = "";
+        function getObject(arr, idNum) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].id === idNum) {
+                    marketName = arr[i].marketname;
+                }
+            }
+            return null;
+        }
+        getObject(data, id);
 
         if (loading) {
             return (
-                <div>...Loading</div>
+                <div className="loading">...Loading</div>
             )
         } else if (errMsg) {
             return (
                 <div>{errMsg}</div>
             )
         } else {
-            // const oneProduct = prodArr.map((product, i) => <li key={product + i} {...product} />)
             return (
-
-                <div>
-                    <h1>Name of Farmer's Market</h1>
-                    <p>Address: {info.Address}</p>
-                    <p>GoogleLink: <a href={this.filterGoogle(info.GoogleLink)}>{this.filterGoogle(info.GoogleLink)}</a></p>
-                    {/* <Products productStr={info.Products}></Products> */}
-                    {/* <ul>Products:
-                        {oneProduct}
-                    </ul> */}
-                    <ul>Products: {this.parseStr(info.Products)}</ul>
-                    <p>Schedule: {this.filterStr(info.Schedule)}</p>
+                <div className="marketInfoWrapper">
+                    <div className="marketInfo">
+                        <h1 className="marketInfoH1">{marketName}</h1>
+                        <p className="infoP"><span className="bold">Address:</span> {info.Address}</p>
+                        <p className="infoP"><span className="bold">GoogleLink: </span><a href={this.filterGoogle(info.GoogleLink)}>{this.filterGoogle(info.GoogleLink)}</a></p>
+                        <ul><span className="bold">Products:</span> {this.parseStr(info.Products)}</ul>
+                        <p className="infoP"><span className="bold">Schedule:</span> {this.filterStr(info.Schedule)}</p>
+                        <Link className="linkMarkets" to="/farmersMarkets">Back to Markets</Link>
+                        <Link className="linkHome" to="/">Return Home</Link>
+                    </div>
                 </div>
             )
 
@@ -68,4 +76,4 @@ class MarketInfo extends Component {
 const mapStateToProps = state => {
     return state.locations;
 }
-export default connect(mapStateToProps, { getMarketInfo })(MarketInfo);
+export default connect(mapStateToProps, { getMarketInfo, setCurrentId })(MarketInfo);

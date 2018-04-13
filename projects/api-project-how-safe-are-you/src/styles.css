@@ -1,13 +1,32 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     box-sizing: border-box;
 }
-.appWrapper{
-background-image: url(https://cdn.pixabay.com/photo/2017/09/06/20/36/fruit-stand-2722944_1280.jpg);
-background-size: cover;
-height: 100%; 
+
+@font-face {
+    font-family: "Ubuntu Bold";
+    src: url("Ubuntu/Ubuntu-Bold.ttf");
 }
-.homeWrapper{
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("Ubuntu/Ubuntu-Regular.ttf");
+}
+
+.appWrapper {
+    background-image: url(https://cdn.pixabay.com/photo/2017/09/06/20/36/fruit-stand-2722944_1280.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    font-family: "Ubuntu";
+}
+
+.loading {
+    background-color: wheat;
+    text-align: center;
+    font-size: 4em;
+}
+
+.homeWrapper {
     background-image: url("https://cdn.pixabay.com/photo/2016/10/22/15/35/fruits-1761031_1280.jpg");
     background-size: cover;
     text-align: center;
@@ -16,124 +35,249 @@ height: 100%;
     align-items: center;
     justify-content: center;
 }
-.homeText{
-    background-color: rgba(255, 253, 253, 0.37);
+
+.homeText {
+    background-color: rgba(255, 253, 253, 0.582);
+    font-family: "Ubuntu Bold";
+    width: 80%
 }
-.homeH1{
-    font-size: 4em;
+
+.homeH1 {
+    font-size: 3em;
     padding: 2%;
     color: rgb(34, 34, 34);
 }
-.homeH3{
-    font-size: 1.5em;
+
+.homeH3 {
+    font-size: 1.75em;
     padding: 2%;
     color: rgb(34, 34, 34);
 }
-button{
+
+button {
     font-size: 1em;
     border-radius: 10px;
     margin: 2%;
 }
-.marketsWrapper{
+
+.marketsWrapper {
     width: 90%;
     margin: auto;
-    padding:5%;
+    padding: 5%;
 }
-.marketsHeader{
+
+.marketsHeader {
     background-color: whitesmoke;
     border: 5px grey solid;
     border-radius: 7px;
 }
-.marketsH1{
-text-align: center;
-font-size: 3em;
-padding:1.5%;
+
+.marketsH1 {
+    text-align: center;
+    font-size: 3em;
+    padding: 1.5%;
 }
-.form1{
-display: flex;
-align-items: center;
-justify-content: center;
+
+.form1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-input{
-    padding: .5%;
+
+input {
     font-size: 1.5em;
     border: .5px solid black;
+    width: 100px;
 }
-.marketSubmit{
+
+.marketSubmit {
     font-size: 1.5em;
     border-radius: 5px;
     background-color: rgb(228, 228, 228);
-    
 }
-.marketsH3{
+
+.marketsH3 {
     font-size: 1.75em;
     margin: 2% 0 2% 0;
-    padding:2%;
+    padding: 2%;
     background-color: whitesmoke;
     border: 5px grey solid;
     border-radius: 7px;
-    width: 45%;
-}
-.farmersMarketsListWrapper{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "l i";
-}
-.listOfMarkets{
-    margin-right: 9%;
-  grid-area: l;
-  background-color: whitesmoke;
-  border: 5px grey solid;
-  border-radius: 7px;
-  padding:5%;
-}
-.imageWrapper{
-    grid-area: i;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.marketImage{
-    background-image: url(https://cdn.pixabay.com/photo/2016/07/31/09/25/market-1558658_1280.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 350px;
     width: 100%;
-    border: 10px whitesmoke solid;
-    border-radius: 7px;
-    margin-bottom:20%;
 }
-.marketImageBerries{
-    /* grid-area: i; */
-    background-image: url(https://cdn.pixabay.com/photo/2017/09/03/16/28/vegetables-2710982__480.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 300px;
-    width: 350px;
-    border: 10px whitesmoke solid;
+
+
+
+.listOfMarkets {
+    background-color: whitesmoke;
+    border: 5px grey solid;
     border-radius: 7px;
+    padding: 5%;
+    margin-bottom: 5%;
 }
-.oneMarket{
+
+.marketImage {
+    display: none;
+}
+
+.marketImageBerries {
+   display: none;
+}
+
+.oneMarket {
     margin: 1%;
     font-size: 1.25em;
     line-height: 2;
     text-decoration: none;
     color: black;
 }
-.oneMarket:visited{
+
+.oneMarket:visited {
     color: rgb(88, 88, 88);
-    
 }
-.linkHome{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
+
+.linkHome {
     width: auto;
     height: auto;
-    margin: 1%;
     background-color: rgba(221, 221, 221, 0.698);
     color: black;
-    padding:.5%;
+    padding: .5%;
+}
+
+.marketInfoWrapper {
+    padding: 3%;
+    height: 100%;
+}
+
+.marketInfo {
+    background-color: whitesmoke;
+    width: 70%;
+    margin: auto;
+    line-height: 2;
+    padding: 1% 2% 2% 2%;
+    position: relative;
+}
+
+.marketInfoH1 {
+    margin:5%;
+    font-size: 2.5em;
+    line-height: 1.5;
+}
+
+.infoP {
+    font-size: 1.25em;
+}
+
+ul {
+    font-size: 1.25em;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    padding-left: 5%;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.linkMarkets {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1em;
+    /* text-decoration: none; */
+    color: black;
+}
+@media(min-width: 800px){
+    .homeH1 {
+        font-size: 4.5em;
+    }
+    .homeH3 {
+        font-size: 2em;
+    }
+    .linkHome {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 8%;
+        height: auto;
+        margin: 1%;
+        background-color: rgba(221, 221, 221, 0.698);
+        color: black;
+        padding: .5%;
+        text-align: center;
+    }
+    .farmersMarketsListWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "l i";
+    }
+    input {
+        padding: .5%;
+        font-size: 1.5em;
+        border: .5px solid black;
+        width: 200px;
+    }
+    
+    .marketSubmit {
+        font-size: 1.5em;
+        border-radius: 5px;
+        background-color: rgb(228, 228, 228);
+    }
+    .listOfMarkets {
+        margin-right: 9%;
+        grid-area: l;
+    }
+    .marketsH3{
+        width: 45%;
+    }
+    input {
+    padding: .5%;
+    font-size: 1.5em;
+    border: .5px solid black;
+}
+
+.marketSubmit {
+    font-size: 1.5em;
+    border-radius: 5px;
+    background-color: rgb(228, 228, 228);
+}
+    .imageWrapper {
+        grid-area: i;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .marketImage {
+        display: block;
+        background-image: url(https://cdn.pixabay.com/photo/2016/07/31/09/25/market-1558658_1280.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 350px;
+        width: 100%;
+        border: 10px whitesmoke solid;
+        border-radius: 7px;
+        margin-bottom: 20%;
+    }
+    
+    .marketImageBerries {
+        display: block;
+        /* grid-area: i; */
+        background-image: url(https://cdn.pixabay.com/photo/2017/09/03/16/28/vegetables-2710982__480.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 300px;
+        width: 350px;
+        border: 10px whitesmoke solid;
+        border-radius: 7px;
+    }
+    .marketInfoH1 {
+        margin:0;
+        font-size: 3em;
+        line-height: 2;
+    }
 }
