@@ -280,4 +280,8 @@ li {
         font-size: 3em;
         line-height: 2;
     }
+    .savedMarketsWrapper{
+        background-color: whitesmoke;
+        margin: 5%;
+    }
 }

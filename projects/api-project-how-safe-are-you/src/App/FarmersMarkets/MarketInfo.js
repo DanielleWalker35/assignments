@@ -3,14 +3,19 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getMarketInfo } from "../../redux/locations";
 import { setCurrentId } from "../../redux/locations";
+import {saveInfo} from "../../redux/locations";
+import {saveName} from "../../redux/locations";
 
 class MarketInfo extends Component {
     constructor(props) {
         super();
+        this.handleClick = this.handleClick.bind(this);
     }
     componentDidMount(props) {
+        window.scrollTo(0, 0);
         this.props.getMarketInfo(this.props.match.params.marketId);
         this.props.setCurrentId(this.props.match.params.marketId);
+        this.props.saveName(this.props.match.params.marketId);
     }
     //write a method to parse the string
     parseStr(str) {
@@ -19,7 +24,6 @@ class MarketInfo extends Component {
     };
 
     filterStr(str) {
-        console.log(str);
         if (str === " <br> <br> <br> " || str === undefined) {
             return "No information provided";
         } else {
@@ -31,20 +35,16 @@ class MarketInfo extends Component {
         if (!str) return;
         return str.replace(/ *\([^)]*\) */g, "");
     }
+   handleClick(e) {
+        e.preventDefault();
+        this.props.saveInfo(this.props);
+        // this.props.saveName(marketName);
+    }
 
     render(props) {
         // console.log(this.props.data);
-        const { info, loading, errMsg, data, id } = this.props;
-        let marketName = "";
-        function getObject(arr, idNum) {
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i].id === idNum) {
-                    marketName = arr[i].marketname;
-                }
-            }
-            return null;
-        }
-        getObject(data, id);
+        const { info, loading, errMsg, data, id, marketName } = this.props;
+       
 
         if (loading) {
             return (
@@ -65,6 +65,7 @@ class MarketInfo extends Component {
                         <p className="infoP"><span className="bold">Schedule:</span> {this.filterStr(info.Schedule)}</p>
                         <Link className="linkMarkets" to="/farmersMarkets">Back to Markets</Link>
                         <Link className="linkHome" to="/">Return Home</Link>
+                        <button onClick={this.handleClick}> <Link to="/savedMarkets">Save Market</Link> </button>
                     </div>
                 </div>
             )
@@ -76,4 +77,4 @@ class MarketInfo extends Component {
 const mapStateToProps = state => {
     return state.locations;
 }
-export default connect(mapStateToProps, { getMarketInfo, setCurrentId })(MarketInfo);
+export default connect(mapStateToProps, { getMarketInfo, setCurrentId, saveInfo, saveName })(MarketInfo);

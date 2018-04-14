@@ -7,6 +7,8 @@ const initialState = {
     },
     zip: "",
     id: "",
+    marketName: "",
+    savedMarkets: [],
     loading: false,
     errMsg: "",
 }
@@ -49,6 +51,32 @@ const locationReducer = (state = initialState, action) => {
                 id: action.id,
                 loading: false,
             }
+        case "SAVE_INFO":
+            return {
+                ...state,
+                savedMarkets: [...state.savedMarkets, {
+                        name: action.stateObj.marketName,
+                        info: action.stateObj.info,
+                    }
+                ],
+                loading: false,
+            }
+        case "MARKET_NAME":
+            let newMarketName = ""
+            function getMarketName(arr) {
+                for (let i = 0; i < state.data.length; i++) {
+                    if (arr[i].id === action.id) {
+                        newMarketName = arr[i].marketname
+                    } else {
+                    }
+                }
+            }
+            getMarketName(state.data);
+            return {
+                ...state,
+                marketName: newMarketName,
+                loading: false,
+            }
         default:
             return state;
     }
@@ -82,6 +110,7 @@ export const enteredZip = zip => {
 }
 
 export const setCurrentId = id => {
+    console.log(id);
     return {
         type: "CURRENT_ID",
         id,
@@ -104,6 +133,20 @@ export const getMarketInfo = id => {
                     errMsg: "Sorry no data is unavailable."
                 })
             })
+    }
+}
+export const saveInfo = stateObj => {
+    console.log(stateObj);
+    return {
+        type: "SAVE_INFO",
+        stateObj
+    }
+}
+export const saveName = id => {
+    console.log(id);
+    return {
+        type: "MARKET_NAME",
+        id
     }
 }
 
