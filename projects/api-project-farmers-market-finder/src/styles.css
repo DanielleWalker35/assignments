@@ -106,8 +106,6 @@ input {
     width: 100%;
 }
 
-
-
 .listOfMarkets {
     background-color: whitesmoke;
     border: 5px grey solid;
@@ -121,7 +119,7 @@ input {
 }
 
 .marketImageBerries {
-   display: none;
+    display: none;
 }
 
 .oneMarket {
@@ -159,7 +157,7 @@ input {
 }
 
 .marketInfoH1 {
-    margin:5%;
+    margin: 5%;
     font-size: 2.5em;
     line-height: 1.5;
 }
@@ -183,14 +181,36 @@ li {
 }
 
 .linkMarkets {
-    position: absolute;
-    top: 0;
-    left: 10px;
     font-size: 1em;
-    /* text-decoration: none; */
+    background-color: whitesmoke;
     color: black;
+    margin: .5%;
 }
-@media(min-width: 800px){
+
+.savedMarketsWrapper {
+    height: 100%;
+    padding: 3%;
+}
+
+.savedMarketsPage {
+    background-color: whitesmoke;
+    width: 80%;
+    margin: auto;
+    padding: .5% 2% 2% 2%;
+}
+.savedMarketsH2{
+    text-align: center;
+    font-size: 2.5em;
+    margin:2.5%;
+}
+.savedMarketName{
+    font-size: 1.5em;
+}
+.indivMarket{
+    margin:3%;
+}
+
+@media(min-width: 800px) {
     .homeH1 {
         font-size: 4.5em;
     }
@@ -222,7 +242,6 @@ li {
         border: .5px solid black;
         width: 200px;
     }
-    
     .marketSubmit {
         font-size: 1.5em;
         border-radius: 5px;
@@ -232,20 +251,19 @@ li {
         margin-right: 9%;
         grid-area: l;
     }
-    .marketsH3{
+    .marketsH3 {
         width: 45%;
     }
     input {
-    padding: .5%;
-    font-size: 1.5em;
-    border: .5px solid black;
-}
-
-.marketSubmit {
-    font-size: 1.5em;
-    border-radius: 5px;
-    background-color: rgb(228, 228, 228);
-}
+        padding: .5%;
+        font-size: 1.5em;
+        border: .5px solid black;
+    }
+    .marketSubmit {
+        font-size: 1.5em;
+        border-radius: 5px;
+        background-color: rgb(228, 228, 228);
+    }
     .imageWrapper {
         grid-area: i;
         display: flex;
@@ -263,7 +281,6 @@ li {
         border-radius: 7px;
         margin-bottom: 20%;
     }
-    
     .marketImageBerries {
         display: block;
         /* grid-area: i; */
@@ -276,12 +293,14 @@ li {
         border-radius: 7px;
     }
     .marketInfoH1 {
-        margin:0;
+        margin: 0;
         font-size: 3em;
         line-height: 2;
     }
-    .savedMarketsWrapper{
-        background-color: whitesmoke;
-        margin: 5%;
+    .linkMarkets {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        padding: .5%;
     }
 }

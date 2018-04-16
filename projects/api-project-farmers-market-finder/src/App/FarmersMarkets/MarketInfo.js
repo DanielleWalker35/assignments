@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getMarketInfo } from "../../redux/locations";
 import { setCurrentId } from "../../redux/locations";
-import {saveInfo} from "../../redux/locations";
-import {saveName} from "../../redux/locations";
+import { saveInfo } from "../../redux/locations";
+import { saveName } from "../../redux/locations";
 
 class MarketInfo extends Component {
     constructor(props) {
@@ -22,7 +22,6 @@ class MarketInfo extends Component {
         if (!str) return "No information provided";
         return str.split(";").map((product, i) => <li key={product + i}>{product}</li>);
     };
-
     filterStr(str) {
         if (str === " <br> <br> <br> " || str === undefined) {
             return "No information provided";
@@ -30,21 +29,18 @@ class MarketInfo extends Component {
             return (str.replace(/<br>/g, ""));
         }
     }
-
     filterGoogle(str) {
         if (!str) return;
         return str.replace(/ *\([^)]*\) */g, "");
     }
-   handleClick(e) {
+    handleClick(e) {
         e.preventDefault();
         this.props.saveInfo(this.props);
-        // this.props.saveName(marketName);
     }
 
     render(props) {
-        // console.log(this.props.data);
-        const { info, loading, errMsg, data, id, marketName } = this.props;
-       
+        const { info, loading, errMsg, marketName } = this.props;
+
 
         if (loading) {
             return (

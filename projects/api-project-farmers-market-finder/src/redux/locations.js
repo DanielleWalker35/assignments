@@ -110,7 +110,7 @@ export const enteredZip = zip => {
 }
 
 export const setCurrentId = id => {
-    console.log(id);
+    // console.log(id);
     return {
         type: "CURRENT_ID",
         id,
@@ -118,7 +118,7 @@ export const setCurrentId = id => {
 }
 
 export const getMarketInfo = id => {
-    console.log(id);
+    // console.log(id);
     return dispatch => {
         axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id)
             .then(response => {
@@ -136,14 +136,14 @@ export const getMarketInfo = id => {
     }
 }
 export const saveInfo = stateObj => {
-    console.log(stateObj);
+    // console.log(stateObj);
     return {
         type: "SAVE_INFO",
         stateObj
     }
 }
 export const saveName = id => {
-    console.log(id);
+    // console.log(id);
     return {
         type: "MARKET_NAME",
         id

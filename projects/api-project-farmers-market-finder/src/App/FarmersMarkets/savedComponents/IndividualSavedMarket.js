@@ -8,7 +8,6 @@ function IndividualSavedMarket(props) {
     };
 
    function filterStr(str) {
-        // console.log(str);
         if (str === " <br> <br> <br> " || str === undefined) {
             return "No information provided";
         } else {
@@ -22,8 +21,8 @@ function IndividualSavedMarket(props) {
     }
    
     return (
-        <div>
-            <h3>{props.marketName}</h3>
+        <div className="indivMarket">
+            <h3 className="savedMarketName">{props.marketName}</h3>
             <p className="infoP"><span className="bold">Address:</span> {props.marketInfo.Address}</p>
             <p className="infoP"><span className="bold">GoogleLink: </span><a href={filterGoogle(props.marketInfo.GoogleLink)}>{filterGoogle(props.GoogleLink)}</a></p>
             <ul><span className="bold">Products:</span> {parseStr(props.marketInfo.Products)}</ul>

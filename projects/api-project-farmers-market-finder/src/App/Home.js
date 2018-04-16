@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 function Home(props) {
-  //maybe do a farm fact
     return (
         <div className="homeWrapper">
             <div className="homeText">

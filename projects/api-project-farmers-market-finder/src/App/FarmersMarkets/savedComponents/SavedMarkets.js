@@ -4,17 +4,13 @@ import { Link } from "react-router-dom";
 import IndividualSavedMarket from "./IndividualSavedMarket";
 
 class SavedMarkets extends Component {
-    constructor(props) {
-        super(props);
-
-    }
-    componentDidMount(){
+  
+    componentDidMount() {
         window.scrollTo(0, 0)
     };
     render(props) {
         console.log(this.props.savedMarkets);
-        // console.log(this.props.data);
-        const { info, loading, errMsg, data, id, savedMarkets, marketName } = this.props;
+        const { loading, errMsg, savedMarkets } = this.props;
 
         if (loading) {
             return (
@@ -28,9 +24,11 @@ class SavedMarkets extends Component {
             const indivMarketComponent = savedMarkets.map((market, i) => <IndividualSavedMarket key={market.name + i} marketName={market.name} marketInfo={market.info} />);
             return (
                 <div className="savedMarketsWrapper">
-                    <h2>Saved Markets</h2>
-                    <div>{indivMarketComponent}</div>
-                    <Link className="linkMarkets" to="/farmersMarkets">Back to Markets</Link>
+                    <div className="savedMarketsPage">
+                        <h2 className="savedMarketsH2">Saved Markets</h2>
+                        <div>{indivMarketComponent}</div>
+                        <Link className="linkMarkets" to="/farmersMarkets">Back to Markets</Link>
+                    </div>
                 </div>
             )
         }

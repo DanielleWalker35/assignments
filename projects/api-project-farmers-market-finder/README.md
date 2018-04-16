@@ -1,3 +1,14 @@
+
+## Personal React/Redux Site
+ Build a React/Redux site with a theme and content of your choosing.
+
+## Requirements:
+
+- Your site must integrate with an online API.
+- Your site must have at least 3 views (pages) using React Router.
+- Your site must be responsive. 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
