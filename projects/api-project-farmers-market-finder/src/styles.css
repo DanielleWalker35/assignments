@@ -186,6 +186,12 @@ li {
     color: black;
     margin: .5%;
 }
+.linkMarkets2 {
+    font-size: 1em;
+    background-color: whitesmoke;
+    color: black;
+    margin: .5%;
+}
 
 .savedMarketsWrapper {
     height: 100%;
@@ -283,7 +289,6 @@ li {
     }
     .marketImageBerries {
         display: block;
-        /* grid-area: i; */
         background-image: url(https://cdn.pixabay.com/photo/2017/09/03/16/28/vegetables-2710982__480.jpg);
         background-size: cover;
         background-repeat: no-repeat;
@@ -292,12 +297,19 @@ li {
         border: 10px whitesmoke solid;
         border-radius: 7px;
     }
+   
     .marketInfoH1 {
         margin: 0;
         font-size: 3em;
         line-height: 2;
     }
     .linkMarkets {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        /* padding: .5%; */
+    }
+    .linkMarkets2 {
         position: absolute;
         top: 0;
         left: 10px;

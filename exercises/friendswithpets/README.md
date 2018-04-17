@@ -1,3 +1,11 @@
+## Friends with Pets Props Practice
+
+Build a simple React app that has a <FriendList /> component, a <Friend /> component and a <Pet /> component.
+
+.map() through an array of friends. Each friend will have an array of pets. Feel free to use the one at the bottom of this write up. In your .map(), render a <Friend /> component, passing through the name, age, and pets of each friend as props.
+
+<Friend /> Should display the info nicely. Use some styles and appropriate HTML(JSX) tags. <Friend /> Should also .map() through the pets array and render <Pet />. Pets should also be displayed nicely.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

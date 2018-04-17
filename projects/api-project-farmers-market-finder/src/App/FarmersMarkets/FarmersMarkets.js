@@ -53,6 +53,7 @@ class FarmersMarkets extends Component {
                         <div className="imageWrapper">
                             <div className="marketImage"></div>
                             <div className="marketImageBerries"></div>
+                            <img src="https://imgur.com/iHmw4oZ" alt=""/>
                         </div>
                     </div>
                     <Link className="linkHome" to="/">Return Home</Link>

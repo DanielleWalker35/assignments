@@ -1,3 +1,13 @@
+
+## Blog Props
+
+A great way to practice building web stuff is to copy sites or apps that are already built.
+
+This exercise will help you to fight through the harder aspects instead of saying "I actually wanted it to look like this," when you might just want to take the easy way out.
+
+Re-create this website.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

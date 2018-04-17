@@ -27,7 +27,7 @@ class SavedMarkets extends Component {
                     <div className="savedMarketsPage">
                         <h2 className="savedMarketsH2">Saved Markets</h2>
                         <div>{indivMarketComponent}</div>
-                        <Link className="linkMarkets" to="/farmersMarkets">Back to Markets</Link>
+                        <Link className="linkMarkets2" to="/farmersMarkets">Back to Markets</Link>
                     </div>
                 </div>
             )

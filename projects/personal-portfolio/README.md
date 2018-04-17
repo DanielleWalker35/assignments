@@ -1,3 +1,9 @@
+## Personal Portfolio
+This is my personal Portfolio Project. 
+
+It is designed to host my projects and information about me.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

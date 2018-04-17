@@ -1,3 +1,15 @@
+## Colored Info Boxes
+
+Create a component that you can reuse 10 times. This component should be able to receive props for:
+
+Background Color
+Title
+Subtitle
+Information
+This component should be styled and built out well.
+
+Manually pass in props for each component from a parent component.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
