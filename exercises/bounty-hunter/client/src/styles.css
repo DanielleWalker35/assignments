@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.appWrapper{
+    background: rgb(29, 27, 27) url("http://images2.fanpop.com/images/photos/3300000/Dog-dog-the-bounty-hunter-3308558-1440-900.jpg") no-repeat right top;
+}
+.header{
+    color:whitesmoke;
+    padding: 5% 5% 5% 15%;
+    font-size: 80px;
+}
+.bountyWrapper{
+    color: whitesmoke;
+    margin-left:3%;
+    margin-bottom: 3%;
+    display: flex;
+    width: 60%;
+}
+.bountyInfo{
+    margin-left: 10%;
+}
+h2{
+    color:whitesmoke;
+    margin-left: 3%;
+}
+.deleteButton{
+  font-size: 40px;
+}
+.addForm{
+    margin-left:3%;
+    padding-bottom: 3%;
+}
+h3{
+    font-size:30px; 
+}
+p{
+    font-size: 20px;
+}
+input{
+    margin:1%;
+    font-size: 16px;
+}
+button{
+    margin:1%;
+    font-size: 16px;
+}
+select{
+    font-size: 16px;
+}
