@@ -56,7 +56,7 @@ bountyRouter.route("/:id")
         BountyModel.findOneAndRemove({ _id: req.params.id }, (err, deletedBounty) => {
             if (err) return res.send(err)
             if (!deletedBounty) return res.status(404).send({ message: "Bounty not found." })
-            res.status(200).send({message: `${deletedBounty.name} 'was succuessfully deleted'`});
+            res.status(200).send({message: `${deletedBounty.name} 'was successfully deleted'`});
         })
 
         // const { id } = req.params;
