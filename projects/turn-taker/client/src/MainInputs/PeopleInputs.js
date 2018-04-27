@@ -45,7 +45,7 @@ class PeopleInputs extends Component {
 
     render() {
         const { name, age } = this.state.inputs;
-        const peopleList = this.props.data.map(person => <OnePerson key={person._id} editPerson={this.props.editPerson} deletePerson={this.props.deletePerson} {...person} />)
+        const peopleList = this.props.personData.map(person => <OnePerson key={person._id} editPerson={this.props.editPerson} deletePerson={this.props.deletePerson} {...person} />)
         return (
             <div>
                 <h1>Add a Person:</h1>

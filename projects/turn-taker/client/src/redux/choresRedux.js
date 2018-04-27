@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const initialState = {
-    data: [],
+    choreData: [],
     loading: true,
     errMsg: ""
 }
@@ -13,19 +13,19 @@ const choresReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                data: action.data
+                choreData: action.data
             }
         case "ADD_CHORE":
             return {
                 ...state,
                 loading: false,
-                data: [...state.data, action.newChore]
+                choreData: [...state.choreData, action.newChore]
             }
         case "EDIT_CHORE":
             return {
                 ...state,
                 loading: false,
-                data: state.data.map(chore => {
+                choreData: state.choreData.map(chore => {
                     if (chore._id === action.id) {
                         return action.editedChore
                     } else {
@@ -37,7 +37,7 @@ const choresReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                data: state.data.filter(chore => chore._id !== action.id)
+                choreData: state.choreData.filter(chore => chore._id !== action.id)
             }
         default:
             return state;

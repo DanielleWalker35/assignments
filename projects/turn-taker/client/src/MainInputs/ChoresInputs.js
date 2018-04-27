@@ -47,7 +47,7 @@ class ChoresInputs extends Component {
 
     render() {
         const { title, ageLevel, description } = this.state.inputs;
-        const choresList = this.props.data.map(chore => <OneChore key={chore._id} editChore={this.props.editChore} deleteChore={this.props.deleteChore} {...chore} />)
+        const choresList = this.props.choreData.map(chore => <OneChore key={chore._id} editChore={this.props.editChore} deleteChore={this.props.deleteChore} {...chore} />)
         return (
             <div>
                 <h1>Add a Chore:</h1>

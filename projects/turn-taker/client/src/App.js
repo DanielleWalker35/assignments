@@ -6,9 +6,8 @@ import AssignedChores from "./MainInputs/AssignedChores/AssignedChores";
 function App() {
     return (
         <div>
-            {/* <MainInputs></MainInputs> */}
             <Switch>
-                <Route path='/' component={MainInputs} />
+                <Route exact path='/' component={MainInputs} />
                 <Route path='/assignedChores' component={AssignedChores} />
             </Switch>
         </div>

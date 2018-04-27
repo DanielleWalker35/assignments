@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const initialState = {
-    data: [],
+    personData: [],
     loading: true,
     errMsg: ""
 }
@@ -14,19 +14,19 @@ const peopleReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                data: action.data
+                personData: action.data
             }
         case "ADD_PERSON":
             return {
                 ...state,
                 loading: false,
-                data: [...state.data, action.newPerson]
+                personData: [...state.personData, action.newPerson]
             }
         case "EDIT_PERSON":
             return {
                 ...state,
                 loading: false,
-                data: state.data.map(person => {
+                personData: state.personData.map(person => {
                     if (person._id === action.id) {
                         return action.editedPerson
                     } else {
@@ -38,7 +38,7 @@ const peopleReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                data: state.data.filter(person => person._id !== action.id)
+                personData: state.personData.filter(person => person._id !== action.id)
             }
         default:
             return state;

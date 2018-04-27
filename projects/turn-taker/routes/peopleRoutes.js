@@ -17,7 +17,6 @@ personRouter.route("/")
             res.status(201).send(addedPerson);
         })
     })
-
 personRouter.route("/:id")
     .get((req, res) => {
         PersonModel.findOne({ _id: req.params.id }, (err, foundPerson) => {
@@ -34,7 +33,7 @@ personRouter.route("/:id")
         })
     })
     .put((req, res) => {
-        PersonModel.findOneAndUpdate({ _id: req.params.id }, req.body, {new: true}, (err, updatedPerson) => {
+        PersonModel.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, updatedPerson) => {
             if (err) return res.send(err);
             if (!updatedPerson) return res.status(404).send({ message: "Person not found." });
             res.status(200).send(updatedPerson)
