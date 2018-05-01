@@ -18,7 +18,7 @@ class PeopleInputs extends Component {
         // this.handleEdit = this.handleEdit.bind(this);
     }
     componentDidMount() {
-        this.props.getPeople();
+        // this.props.getPeople();
     }
     handleChange(event) {
         const { name, value } = event.target;
@@ -36,12 +36,6 @@ class PeopleInputs extends Component {
         this.props.addPerson(this.state.inputs);
         this.setState(this.initialState)
     }
-    // handleEdit(inputs, id){
-    //   this.props.editPerson(inputs, id);
-    // }
-    // handleDelete(id){
-    //     this.props.deletePerson(id);
-    // }
 
     render() {
         const { name, age } = this.state.inputs;

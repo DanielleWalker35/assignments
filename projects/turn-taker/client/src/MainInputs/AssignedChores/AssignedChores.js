@@ -1,49 +1,71 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { getChores } from "../../redux/choresRedux";
-// import {getPeople} from "../../redux/peopleRedux";
+import { getChores, addAssigned } from "../../redux/choresRedux";
+import { getPeople, editPerson } from "../../redux/peopleRedux"
 import OneChoreList from "./OneChoreList";
 
-//on Component did mount get a list of all the chores
-//map through and display
+
 class AssignedChores extends Component {
     constructor(props) {
         super(props);
         this.initialState = {
-            assignedPeople: []
+            // people:[],
+            // assignedPeopleIds: this.props.people.personData,
         }
-        this.state= this.initialState;
-        this.handleClick= this.handleClick.bind(this);
+        this.state = this.initialState;
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    componentDidMount() {
-        this.props.getChores();
-        // this.props.getPeople();
-    }
-    handleClick(arr1) {
-        function assignChore(arr1, arr2) {
-            for (let i = 0; i < arr1.length; i++) {
-                if (arr2.find(person => person === arr1[i].name)) {
-                    continue
-                } else {
-                    arr2.push(arr1[i].name)
-                    return
-                }
-            }
-            // console.log(arr2);
-        }
-        assignChore(arr1, this.state.assignedPeople);
-        console.log(this.state.assignedPeople);
-        //do an axios put request to the chore for who it is assigned to.
+    // componentDidMount() {
+    //     this.props.getChores();
+    //     this.props.getPeople();
+    // }
+    handleClick(choreId, ageLevel) {
+        let currentId = "";
+        let currentAssignedNum = 0;
+        function assignChore(arr1, ageLevel) {
+            let oldEnough = arr1.filter(user => user.age >= ageLevel)
+            // console.log(oldEnough);
+            let byAssignedCount = oldEnough.sort((left, right) => left.assigned > right.assigned)
+            // console.log(byAssignedCount);
+            currentId = byAssignedCount[0]._id;
+            currentAssignedNum = byAssignedCount[0].assigned +1;
+            // console.log(currentId);
+            // console.log(currentAssignedNum);
+            // for (let i = 0; i < arr1.length; i++) {
+            //     if (arr1[i].age < ageLevel) {
+            //         console.log("am i hitting this if??")
+            //         continue
+            //     } else if (arr1[i].age >= ageLevel && arr1[i].assigned === 0) {
+            //         console.log("I am in the second if statement")
+            //         arr1[i].assigned++;
+            //         currentAssignedNum = arr1[i].assigned;
+            //         currentId = arr1[i]._id;  
+            //         return
+            //     } else if (arr1[i].age >= ageLevel && arr1[i].assigned > 0) {
 
-        //if not assign them and push to assigned array with id
-        //
-        //when assigning do a put request with the person.id for the assigned value
+            //         console.log("I am here the third if statement")
+            //         arr1.sort((a, b) => {
+            //             return b.assigned - a.assigned
+            //         })
+            //         let assignedObject = arr1[0];
+            //         arr1[0].assigned++;
+            //         currentAssignedNum = arr1[0].assigned;
+            //         currentId = assignedObject._id;
+            //         return
+            //     }
+            // }
+        }
+        assignChore(this.props.people.personData, ageLevel);
+        // console.log(currentAssignedNum);
+        // console.log(this.state.assignedPeopleIds);
+        this.props.addAssigned(choreId, currentId, currentAssignedNum);
+        this.props.editPerson({ assigned: currentAssignedNum }, currentId);
 
     }
     render() {
-        const choresList = this.props.choreData.map(chore => <OneChoreList key={chore._id} assignChore={this.handleClick} {...chore} />)
+        const choresList = this.props.chores.choreData.map(chore => <OneChoreList key={chore._id} assignChore={this.handleClick} {...chore} />)
         return (
             <div>
                 {choresList}
@@ -53,6 +75,6 @@ class AssignedChores extends Component {
     }
 }
 const mapStateToProps = state => {
-    return state.chores
+    return state
 }
-export default connect(mapStateToProps, { getChores })(AssignedChores);
+export default connect(mapStateToProps, { getChores, addAssigned, getPeople, editPerson })(AssignedChores);

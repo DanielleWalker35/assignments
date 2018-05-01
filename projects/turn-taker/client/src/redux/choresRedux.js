@@ -39,6 +39,28 @@ const choresReducer = (state = initialState, action) => {
                 loading: false,
                 choreData: state.choreData.filter(chore => chore._id !== action.id)
             }
+        case "ADD_ASSIGNED":
+            return {
+                ...state,
+                loading: false,
+                choreData: state.choreData.map(chore => {
+                    if (chore._id === action.choreId) {
+                        return action.editedChore
+                    } else {
+                        return chore
+                    }
+                })
+            }
+        case "CLEAR_ASSIGNMENTS":
+            return {
+                ...state,
+                loading: false,
+                choreData: state.choreData.map(chore => ({
+                    ...chore,
+                    assignedTo: null
+                })
+                )
+            }
         default:
             return state;
     }
@@ -95,6 +117,45 @@ export const deleteChore = (id) => {
                     id
                 })
             })
+    }
+}
+export const addAssigned = (choreId, personId) => {
+    return dispatch => {
+        axios.put("/chores/" + choreId, { assignedTo: personId })
+            .then(response => {
+                // console.log(response.data);
+                dispatch({
+                    type: "ADD_ASSIGNED",
+                    editedChore: response.data,
+                    choreId,
+                })
+            })
+            .catch(err => {
+                dispatch({
+                    type: "ERR_MSG",
+                    errMsg: "Sorry no data available"
+
+                })
+            })
+    }
+}
+export const clearAssignments = () => {
+    return dispatch => {
+        axios.put("/chores/reset")
+            .then(response => {
+                console.log(response.data)
+                dispatch({
+                    type: "CLEAR_ASSIGNMENTS",
+                })
+            })
+            .catch(err => {
+                dispatch({
+                    type: "ERR_MSG",
+                    errMsg: "Sorry no data available"
+
+                })
+            })
+
     }
 }
 export default choresReducer;

@@ -10,6 +10,10 @@ const personSchema = new Schema ({
         required: true,
         type: Number
     },
+    assigned: {
+        type:Number,
+        default:0
+    },
     assignedChores: Array
 })
 

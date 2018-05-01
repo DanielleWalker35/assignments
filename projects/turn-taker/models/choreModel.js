@@ -16,7 +16,8 @@ const choreSchema = new Schema({
     },
     assignedTo: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "people"
+        ref: "people",
+        default: null
     },
     completedBy: Array,
 })

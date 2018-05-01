@@ -40,11 +40,22 @@ const peopleReducer = (state = initialState, action) => {
                 loading: false,
                 personData: state.personData.filter(person => person._id !== action.id)
             }
+        case "RESET_ASSIGNED":
+            return {
+                ...state,
+                loading: false,
+                personData: state.personData.map(person => ({
+                    ...person,
+                    assigned: 0
+                })
+                )
+            }
         default:
             return state;
     }
 }
 export const getPeople = () => {
+    // console.log("is this working?")
     return dispatch => {
         axios.get("/people")
             .then(response => {
@@ -98,4 +109,10 @@ export const deletePerson = (id) => {
             })
     }
 }
+export const resetAssigned = () => {
+   return {
+       type: "RESET_ASSIGNED"
+   }
+}
+
 export default peopleReducer;

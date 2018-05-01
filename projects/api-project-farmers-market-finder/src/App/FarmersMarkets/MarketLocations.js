@@ -6,7 +6,7 @@ class MarketLocations extends Component {
 
     render(props) {
         return (
-            <div>
+            <div className="marketLocationsWrapper">
                 <Link className="oneMarket" to={`/marketinfo/${this.props.id}`}>{this.props.marketname}</Link>
             </div>
         )

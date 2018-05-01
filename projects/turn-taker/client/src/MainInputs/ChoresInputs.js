@@ -19,7 +19,7 @@ class ChoresInputs extends Component {
         // this.handleEdit = this.handleEdit.bind(this);
     }
     componentDidMount() {
-        this.props.getChores();
+        // this.props.getChores();
     }
     handleChange(event) {
         const { name, value } = event.target;
