@@ -1,12 +1,8 @@
 import React from 'react';
-import PeopleInputs from "./PeopleInputs";
-import ChoresInputs from "./ChoresInputs";
 import { Link } from "react-router-dom";
 import {connect} from "react-redux";
 import {clearAssignments} from "../redux/choresRedux";
 import {resetAssigned} from "../redux/peopleRedux";
-
-// import AssignedChores from "./AssignedChores/AssignedChores";
 
 function MainInputs(props) {
     const handleClick = ()=>{
@@ -14,11 +10,11 @@ function MainInputs(props) {
         props.resetAssigned();
     }
     return (
-        <div>
-            <header>Welcome to Turn Taker</header>
-            <PeopleInputs />
-            <ChoresInputs />
-            <Link to="/assignedChores"><button onClick={handleClick} >Assign Chores</button></Link>
+        <div className="homeWrapper">
+            <header>Turn Taker</header>
+            <Link className="homeLink" to="/peopleInputs">Enter People</Link>
+            <Link className="homeLink" to="/choresInputs">Enter Chores</Link>
+            <Link className="homeLink" to="/assignedChores" onClick={handleClick}> Assign Chores</Link>
         </div>
     )
 }

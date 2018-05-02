@@ -53,23 +53,24 @@ class OneChore extends Component {
         const styles = {
             display: showModal ? "initial" : "none"
         }
-        // console.log(this.state.inputs);
-        // console.log(this.props._id); 
+
         return (
-            <div>
-                <h1>{this.props.title}</h1>
-                <p>{this.props.description}</p>
-                <button onClick={this.handleClick}>Edit</button>
-                <button  onClick={()=> this.props.deleteChore(this.props._id)}className="deleteButton"></button>
+            <div className="oneChoreWrapper">
+                <div className="choreTitleDescription">
+                    <h2>{this.props.title}</h2>
+                    <p className="choreDescription">{this.props.description}</p>
+                    <button className="editButton" onClick={this.handleClick}>Edit</button>
+                </div>
+                <button onClick={() => this.props.deleteChore(this.props._id)} className="deleteButton"></button>
                 <div style={styles} onClick={this.handleClickClose} className="backgroundModal closeModal">
                     <div className="boxForModal">
                         <h1>Edit:</h1>
-                        <form onSubmit={this.handleSubmit}>
+                        <form className="editForm" onSubmit={this.handleSubmit}>
                             <input onChange={this.handleChange} name="title" value={title} placeholder="Chore" type="text" />
                             <input onChange={this.handleChange} name="description" value={description} placeholder="Description" type="text" />
                             <input onChange={this.handleChange} name="ageLevel" value={ageLevel} placeholder="Age Level" type="text" />
-                            <button >Save Changes</button>
-                            <button className="closeModal" onClick={this.handleClickClose}>Close</button>
+                            <button className="saveButton">Save Changes</button>
+                            <button className="closeModal deleteButton" onClick={this.handleClickClose}></button>
                         </form>
                     </div>
                 </div>

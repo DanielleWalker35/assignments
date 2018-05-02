@@ -1,27 +1,452 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
 }
-.backgroundModal{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top:0;
-    left:0;
-    background-color: rgba(0, 0, 0, 0.253);
+
+@font-face {
+    font-family: Quando;
+    src: url(./fonts/Quando-Regular.ttf);
 }
-.boxForModal{
-    position: fixed;
-    top:10%;
-    left:30%;
-    background-color: whitesmoke;
+
+@font-face {
+    font-family: Judson;
+    src: url(./fonts/Judson-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(./fonts/Montserrat-Bold.ttf);
+}
+
+.homeWrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    min-height: 100vh;
+    background-image: url(./images/cleanSink.jpg);
+    box-shadow: inset 0 0 0 1000px rgba(253, 253, 253, 0.479);
+    background-size: cover;
+}
+
+header {
+    color: #80011F;
+    font-family: Quando;
+    font-size: 80px;
+    text-align: center;
+    padding: 10% 3% 10% 3%;
+    font-weight: 800
+}
+
+.homeLink {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    font-family: Quando;
+    border: 2px solid black;
+    border-radius: 12px;
+    width: 50%;
+    margin: 2% 25% 2% 25%;
+    padding: 2% 1% 2% 1%;
+    background-color: rgba(245, 245, 245, 0.644);
+}
+
+.peopleInputsWrapper,
+.choresInputsWrapper,
+.assignedWrapper {
+    display: flex;
+    flex-direction: column;
+    background-image: url(./images/dust_scratches.png);
+    background-size: cover;
+    padding-top: 5%;
+}
+
+.peopleWrapper,
+.choreWrapper {
+    font-family: Montserrat;
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+}
+
+.peopleTitle,
+.choreTitle {
+    font-family: Quando;
+    text-align: center;
+    font-size: 50px;
+    margin: 0 2% 5% 2%;
+}
+
+.choreDescription {
+    margin: 3% 0 3% 0;
+}
+
+.inputForm, .editForm {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    /* font-family: Judson; */
+}
+
+input {
+    margin: 3% 0 3% 0;
+    padding: 3%;
+    font-family: Judson;
+    font-size: 16px;
+}
+h2{
+    font-family: Montserrat-Bold;
+}
+
+img {
+    margin-right: 5%;
+}
+
+.crop {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: auto;
+    height: 100px;
+    margin: 0 0 0 -25px;
+}
+
+.submitButton {
+    width: 40%;
+    margin: auto;
+    font-family: Judson;
+    font-size: 16px;
+    background-color: white;
+}
+
+.finishPeople,
+.finishChores {
+    text-decoration: none;
+    color: black;
+    margin: 5% 0 8% 5%;
+    font-size: 20px;
+    border: 1px solid rgb(73, 73, 73);
     border-radius: 5px;
-    padding:5%;
+    width: 20%;
+    padding: 1%;
+    background-color: rgb(190, 190, 190);
+    text-align: center;
 }
-.deleteButton{
+
+.onePersonWrapper,
+.oneChoreWrapper {
+    border: 1px solid black;
+    margin: 2%;
+    padding: 4%;
+    position: relative;
+    background-color: white;
+}
+
+.choreTitleDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.onePersonWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10%;
+}
+
+.personNameAgeDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.editButton {
+    /* margin-top: 8%; */
+    width: 50px;
+    font-family: Judson;
+    font-size: 14px;
+    background-color: whitesmoke;
+}
+
+.deleteButton {
     background-image: url(trashcan.png);
     background-size: cover;
     background-position: center;
     width: 20px;
     height: 20px;
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
+}
+
+.backgroundModal {
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.253);
+    z-index: 9999;
+}
+
+.boxForModal {
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    right: 20%;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding: 5%;
+}
+
+.saveButton {
+    margin: 5%;
+    width: 80%;
+    background-color: white;
+}
+
+.assignedWrapper {
+    min-height: 100vh;
+    padding: 5%;
+}
+
+.assignChoresWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.assignChoreButton {
+    width: 50%;
+    padding: 3% 0 3% 0;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 22px;
+    background-color: white;
+    border: 3px solid black;
+}
+
+.completedButton {
+    background-image: url(./images/checked-checkbox-256.png);
+    background-size: contain;
+    background-position: center;
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+    border: none;
+    margin: auto;
+}
+
+.completedButton:focus {
+    outline: none;
+    background-color: white;
+}
+
+.fireworks {
+    background-image: url(./images/graphics-fireworks-158568.gif);
+    background-size: cover;
+    position: absolute;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+}
+.nameAndPic{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.assignedPerson {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 4%;
+    font-family: Quando;
+    font-weight: bold;
+}
+.assignedPic{
+    align-self: center;
+    margin-bottom: 3%;
+    border: 2px solid black;
+}
+
+@media (min-width: 500px) {
+    .inputForm {
+        width: 40%
+    }
+    .onePersonWrapper,
+    .oneChoreWrapper {
+        width: 70%;
+        margin: 3% 15% 3% 15%;
+    }
+    h2{
+        font-size: 40px;
+    }
+    .editForm {
+        width: 70%;
+    }
+    .saveButton {
+        font-size: 12px;
+    }
+    .nameAndPic{
+        display: flex;
+        flex-direction: row;
+        align-items: space-between;
+        margin: 5% 1% 5% 1%;
+    }
+    .assignedPerson{
+        align-self: center;
+    }
+}
+
+@media (min-width: 700px) {
+    header {
+        font-size: 100px;
+    }
+    .peopleTitle,
+    .choreTitle {
+        margin: 0 2% 5% 2%;
+        font-size: 70px;
+    }
+    inputForm {
+        width: 35%;
+    }
+    input {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    p {
+        font-size: 20px;
+    }
+    .submitButton {
+        font-size: 20px;
+        width: 35%;
+        padding: 3% 0 3% 0;
+    }
+    .deleteButton {
+        width: 40px;
+        height: 40px;
+    }
+    .editButton {
+        font-size: 20px;
+        width: 90px;
+        padding: 1%;
+    }
+    .saveButton {
+        font-size: 18px;
+        width: 60%;
+        margin: auto;
+    }
+    .finishPeople,
+    .finishChores {
+        width: 15%;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 790px) {
+    .peopleInputsWrapper,
+    .choresInputsWrapper,
+    .assignedWrapper {
+        padding-top: 8%;
+    }
+    header {
+        font-size: 120px;
+    }
+    .peopleTitle,
+    .choreTitle {
+        margin: 0 0 5% 0;
+        font-size: 80px;
+    }
+    input {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    /* p {
+        font-size: 30px;
+    } */
+    .crop {
+        width: 150px;
+        height: 150px;
+    }
+    .crop img {
+        height: 150px;
+    }
+    .saveButton {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 900px) {
+    .submitButton {
+        font-size: 30px;
+    }
+    .crop {
+        width: 200px;
+        height: 200px;
+    }
+    .crop img {
+        height: 200px;
+    }
+    .finishPeople,
+    .finishChores {
+        font-size: 30px;
+    }
+    .assignChoreButton {
+        width: 35%;
+        font-size: 28px;
+    }
+    .assignedPerson{
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 1200px) {
+    header {
+        font-size: 140px;
+    }
+    .peopleTitle,
+    .choreTitle {
+        margin: 0 1% 5% 1%;
+        font-size: 90px;
+    }
+    input {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 70px;
+    }
+    p {
+        font-size: 40px;
+    }
+    .editButton {
+        font-size: 30px;
+    }
+    .saveButton {
+        font-size: 28px;
+    }
+    /* .finishPeople,
+    .finishChores {
+        font-size: 40px;
+    } */
+    .completedButton{
+        width: 100px;
+        height: 100px;
+    }
+    .assignedPerson{
+        font-size: 50px;
+    }
+    
 }

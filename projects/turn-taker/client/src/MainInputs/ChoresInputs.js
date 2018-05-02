@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getChores, addChore, editChore, deleteChore } from "../redux/choresRedux";
 import OneChore from "./OneChore"
+import { Link } from "react-router-dom";
+
 
 class ChoresInputs extends Component {
     constructor(props) {
@@ -49,18 +51,18 @@ class ChoresInputs extends Component {
         const { title, ageLevel, description } = this.state.inputs;
         const choresList = this.props.choreData.map(chore => <OneChore key={chore._id} editChore={this.props.editChore} deleteChore={this.props.deleteChore} {...chore} />)
         return (
-            <div>
-                <h1>Add a Chore:</h1>
-                <form onSubmit={this.handleSubmit} >
+            <div className="choresInputsWrapper">
+                <h1 className="choreTitle">What do you need done?</h1>
+                <form  className="inputForm" onSubmit={this.handleSubmit} >
                     <input onChange={this.handleChange} name="title" value={title} placeholder="Chore" type="text" />
                     <input onChange={this.handleChange} name="description" value={description} placeholder="Description" type="text" />
                     <input onChange={this.handleChange} name="ageLevel" value={ageLevel} placeholder="Age Level" type="text" />
-                    <button>Submit</button>
+                    <button className="submitButton">Submit</button>
                 </form>
-                <div>
-                    <h2>Chores:</h2>
+                <div className="choreWrapper">
                     {choresList}
                 </div>
+                <Link className="finishChores" to="/">Finish</Link>
             </div>
         )
     }

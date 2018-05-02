@@ -10,6 +10,7 @@ const personSchema = new Schema ({
         required: true,
         type: Number
     },
+    image:String,
     assigned: {
         type:Number,
         default:0
