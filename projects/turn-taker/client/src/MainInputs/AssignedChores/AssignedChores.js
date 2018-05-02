@@ -35,14 +35,25 @@ class AssignedChores extends Component {
     }
     render() {
         const choresList = this.props.chores.choreData.map(chore => <OneChoreList key={chore._id} assignChore={this.handleClick} {...chore} />)
-        return (
-            <div className="assignedWrapper">
-                <div className="choreWrapper">
-                    {choresList}
+        const { loading, errMsg } = this.props;
+        if (loading) {
+            return (
+                <div className="loading">...Loading</div>
+            )
+        } else if (errMsg) {
+            return (
+                <div>{errMsg}</div>
+            )
+        } else {
+            return (
+                <div className="assignedWrapper">
+                    <div className="choreWrapper">
+                        {choresList}
+                    </div>
+                    <Link className="finishPeople" to="/">Home</Link>
                 </div>
-                <Link className="finishPeople" to="/">Home</Link>
-            </div>
-        )
+            )
+        }
     }
 }
 const mapStateToProps = state => {

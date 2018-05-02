@@ -40,34 +40,40 @@ class ChoresInputs extends Component {
         this.props.addChore(this.state.inputs);
         this.setState(this.initialState)
     }
-    // handleEdit(inputs, id){
-    //   this.props.editChore(inputs, id);
-    // }
-    // handleDelete(id){
-    //     this.props.deleteChore(id);
-    // }
+
 
     render() {
-        const { title, ageLevel, description } = this.state.inputs;
-        const choresList = this.props.choreData.map(chore => <OneChore key={chore._id} editChore={this.props.editChore} deleteChore={this.props.deleteChore} {...chore} />)
-        return (
-            <div className="choresInputsWrapper">
-                <h1 className="choreTitle">What do you need done?</h1>
-                <form  className="inputForm" onSubmit={this.handleSubmit} >
-                    <input onChange={this.handleChange} name="title" value={title} placeholder="Chore" type="text" />
-                    <input onChange={this.handleChange} name="description" value={description} placeholder="Description" type="text" />
-                    <input onChange={this.handleChange} name="ageLevel" value={ageLevel} placeholder="Age Level" type="text" />
-                    <button className="submitButton">Submit</button>
-                </form>
-                <div className="choreWrapper">
-                    {choresList}
+        const { loading, errMsg } = this.props;
+        if (loading) {
+            return (
+                <div className="loading">...Loading</div>
+            )
+        } else if (errMsg) {
+            return (
+                <div>{errMsg}</div>
+            )
+        } else {
+            const { title, ageLevel, description } = this.state.inputs;
+            const choresList = this.props.choreData.map(chore => <OneChore key={chore._id} editChore={this.props.editChore} deleteChore={this.props.deleteChore} {...chore} />)
+            return (
+                <div className="choresInputsWrapper">
+                    <h1 className="choreTitle">What do you need done?</h1>
+                    <form className="inputForm" onSubmit={this.handleSubmit} >
+                        <input onChange={this.handleChange} name="title" value={title} placeholder="Chore" type="text" />
+                        <input onChange={this.handleChange} name="description" value={description} placeholder="Description" type="text" />
+                        <input onChange={this.handleChange} name="ageLevel" value={ageLevel} placeholder="Age Level" type="text" />
+                        <button className="submitButton">Submit</button>
+                    </form>
+                    <div className="choreWrapper">
+                        {choresList}
+                    </div>
+                    <Link className="finishChores" to="/">Finish</Link>
                 </div>
-                <Link className="finishChores" to="/">Finish</Link>
-            </div>
-        )
+            )
+        }
     }
 }
 const mapStateToProps = state => {
- return state.chores;
+    return state.chores;
 }
 export default connect(mapStateToProps, { getChores, addChore, editChore, deleteChore })(ChoresInputs);

@@ -43,22 +43,33 @@ class PeopleInputs extends Component {
     render() {
         const { name, age, image } = this.state.inputs;
         const peopleList = this.props.personData.map(person => <OnePerson key={person._id} editPerson={this.props.editPerson} deletePerson={this.props.deletePerson} {...person} />)
-        return (
-            <div className="peopleInputsWrapper">
-                <h1 className="peopleTitle">Who is available for chores?</h1>
-                <form className="inputForm" onSubmit={this.handleSubmit} action="">
-                    <input onChange={this.handleChange} name="name" value={name} placeholder="Name" type="text" />
-                    <input onChange={this.handleChange} name="age" value={age} placeholder="Age" type="text" />
-                    <input onChange={this.handleChange} name="image" value={image} placeholder="Image URL" type="text" />
-                    <button className="submitButton">Submit</button>
-                </form>
-                <div className="peopleWrapper">
-                    {/* <h2>Available for chores</h2> */}
-                    {peopleList}
+        const { loading, errMsg } = this.props;
+        if (loading) {
+            return (
+                <div className="loading">...Loading</div>
+            )
+        } else if (errMsg) {
+            return (
+                <div>{errMsg}</div>
+            )
+        } else {
+            return (
+                <div className="peopleInputsWrapper">
+                    <h1 className="peopleTitle">Who is available for chores?</h1>
+                    <form className="inputForm" onSubmit={this.handleSubmit} action="">
+                        <input onChange={this.handleChange} name="name" value={name} placeholder="Name" type="text" />
+                        <input onChange={this.handleChange} name="age" value={age} placeholder="Age" type="text" />
+                        <input onChange={this.handleChange} name="image" value={image} placeholder="Image URL" type="text" />
+                        <button className="submitButton">Submit</button>
+                    </form>
+                    <div className="peopleWrapper">
+                        {/* <h2>Available for chores</h2> */}
+                        {peopleList}
+                    </div>
+                    <Link className="finishPeople" to="/">Finish</Link>
                 </div>
-                <Link className="finishPeople" to="/">Finish</Link>
-            </div>
-        )
+            )
+        }
     }
 }
 const mapStateToProps = state => {
