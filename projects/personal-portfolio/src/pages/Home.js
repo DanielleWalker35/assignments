@@ -1,30 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 
-class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.initialState = {
-            display: "HI"//I need to put what will render
-        }
-        this.state = this.initialState;
-        this.handleScroll = this.handleScroll.bind(this);
-    }
+function Home() {
 
-    handleScroll(event) {
-        console.log("hi");
-    };
-    componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
-    }
-    //here i want a onscroll function that returns diff things when it hears a scroll
-    render() {
-        return (
-            <div className="home">
-                <h1>Danielle Walker</h1>
-                <h2>Web Developer</h2>
+    return (
+        <div className="home">
+            <h1>Danielle Walker</h1>
+            <h2>Web Developer</h2>
+            <div className="icons">
+                 <a href="https://www.linkedin.com/in/daniellefacerwalker/" target="_blank" className="linkedIn iconBox"></a>
+                 <a href="https://github.com/DanielleWalker35" target="_blank" className="gitHub iconBox"></a>
             </div>
-        )
-    }
+            <p className="downArrow">&#x2b07;</p>
+        </div>
+    )
 }
+
 export default Home;

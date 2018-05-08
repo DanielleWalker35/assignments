@@ -28,11 +28,11 @@ header {
     list-style-type: none;
 }
 
-.issueOrderedList li {
+.issueOrderedList li.issueLiItem {
     counter-increment: step-counter;
 }
 
-.issueOrderedList li::before {
+.issueOrderedList li.issueLiItem::before {
     grid-area: LB;
     content: "#" counter(step-counter);
     font-size: 50px;
