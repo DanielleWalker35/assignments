@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import IndividualSavedMarket from "./IndividualSavedMarket";
 
 class SavedMarkets extends Component {
-  
+
     componentDidMount() {
         window.scrollTo(0, 0)
     };
+
     render(props) {
         console.log(this.props.savedMarkets);
         const { loading, errMsg, savedMarkets } = this.props;
@@ -26,6 +27,7 @@ class SavedMarkets extends Component {
                 <div className="savedMarketsWrapper">
                     <div className="savedMarketsPage">
                         <h2 className="savedMarketsH2">Saved Markets</h2>
+                        <button className="print" onClick={() => { window.print() }}>Print</button>
                         <div>{indivMarketComponent}</div>
                         <Link className="linkMarkets2" to="/farmersMarkets">Back to Markets</Link>
                     </div>

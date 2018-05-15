@@ -9,7 +9,7 @@ function About() {
                 <div className="bioPicWrapper">
                     <div className="aboutMe">
                         <p className="pFirstHeading">About me</p>
-                        <p>Here I will put interesting info about myself</p>
+                        <p>I am full-stack web developer. I primarily use React and Javascript on the front-end, but love learning new techonologies! </p>
                     </div>
                     <div className="picOfMe"></div>
                     <div className="contactInfo">
@@ -18,7 +18,7 @@ function About() {
                         <p>801-633-4338</p>
                         <p className="pHeading">Email:</p>
                         <p>yeller22@gmail.com</p>
-                        <p v>Location:</p>
+                        <p className="pHeading">Location:</p>
                         <p>Lehi, Ut</p>
                     </div>
                 </div>
