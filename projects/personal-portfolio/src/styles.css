@@ -181,22 +181,17 @@ h2 {
 
 .pBox {
     width: 90%;
-    /* height: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     font-size: 12px;
     font-weight: 800;
     margin-top: 3%;
-    /* background-color: rgba(250, 250, 250, 0.212);
-    padding: 1%; */
 }
 
 .projectP {
     background-color: rgba(250, 250, 250, 0.212);
     padding: 1%;
-    /* border-radius: 8px; */
-    /* margin:1%; */
 }
 .bold{
     font-family: "Libre Franklin Bold";
@@ -214,30 +209,30 @@ h2 {
     background-position: center;
 }
 
-.two {
+.one {
     background-image: url("images/checkered-pattern.png");
     background-color: #5D737E;
     height: 100vh;
 }
 
-.three {
+.two {
     background-image: url("images/checkered-pattern.png");
     background-size: 50%;
     background-color: #91AEC1;
     height: 100vh;
 }
 
-.four {
+/* .three {
     background-image: url("images/black-linen.png");
     background-color: #8E7C93;
     height: 100vh;
-}
+} */
 
-.five {
+/* .four {
     background-image: url("images/dark-stripes-light.png");
     background-color: #D6DBD2;
     height: 100vh;
-}
+} */
 
 .resumeImage {
     background-image: url(images/resumeImage.png);

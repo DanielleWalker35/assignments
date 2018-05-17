@@ -140,7 +140,7 @@ input {
     color: black;
     padding: 5%;
     font-size: .75em;
-    margin:2%;
+    margin: 2%;
 }
 
 .marketInfoWrapper {
@@ -226,7 +226,8 @@ li {
 }
 
 .print {
-margin: auto;
+    margin: auto;
+    border-radius: 0px;
 }
 
 @media(min-width: 800px) {
@@ -325,5 +326,6 @@ margin: auto;
         top: 0;
         left: 10px;
         padding: .5%;
+        font-size: 1em;
     }
 }
