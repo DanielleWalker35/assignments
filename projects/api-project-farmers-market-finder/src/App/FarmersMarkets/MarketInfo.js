@@ -56,7 +56,7 @@ class MarketInfo extends Component {
                     <div className="marketInfo">
                         <h1 className="marketInfoH1">{marketName}</h1>
                         <p className="infoP"><span className="bold">Address:</span> {info.Address}</p>
-                        <p className="infoP"><span className="bold">GoogleLink: </span><a href={this.filterGoogle(info.GoogleLink)}>{this.filterGoogle(info.GoogleLink)}</a></p>
+                        <p className="infoP"><span className="bold">GoogleLink: </span><a href={this.filterGoogle(info.GoogleLink)} target="_blank">{this.filterGoogle(info.GoogleLink)}</a></p>
                         <ul><span className="bold">Products:</span> {this.parseStr(info.Products)}</ul>
                         <p className="infoP"><span className="bold">Schedule:</span> {this.filterStr(info.Schedule)}</p>
                         <Link className="linkMarkets" to="/farmersMarkets">Back to Markets</Link>

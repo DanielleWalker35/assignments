@@ -1,4 +1,6 @@
-# Turn Taker    
+# Turn Taker  
+
+<img width="697" alt="turntaker" src="https://user-images.githubusercontent.com/36897777/40250408-6adb8dea-5a93-11e8-90fd-85c00d872fb3.png">
 
 A full-stack web application that helps families, friends, or co-workers assign chores or activities in a fair way. 
 - Assignments are base on an ability/age level and how many chores/activities someone has already been assigned. 
