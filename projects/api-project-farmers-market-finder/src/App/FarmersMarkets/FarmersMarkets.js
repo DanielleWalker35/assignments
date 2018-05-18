@@ -43,7 +43,7 @@ class FarmersMarkets extends Component {
                     <div className="marketsHeader">
                         <h1 className="marketsH1">Enter a zip code to find near by Farmer's Markets</h1>
                         <form className="form1" onSubmit={this.handleSubmit} >
-                            <input type="text" value={this.props.zip} placeholder="Enter Zip Code" onChange={this.handleChange} />
+                            <input type="text" value={this.props.zip} placeholder="Zip Code" onChange={this.handleChange} />
                             <button className="marketSubmit">Submit</button>
                         </form>
                     </div>
