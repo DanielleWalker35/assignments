@@ -74,11 +74,38 @@
 // }
 // console.log(formatNum(100000));
 
-function sortNumsAscending(arr) {
-    if (arr === null) {
-        return [];
+// function sortNumsAscending(arr) {
+//     if (arr === null) {
+//         return [];
+//     }
+//     const sortedArr = arr.sort((a, b) => a - b);
+//     return sortedArr;
+// }
+// console.log(sortNumsAscending([]));
+
+
+// function fizzBuzz (){
+//     for(let i = 0; i<100; i++){
+//         if(i % 3 === 0 && i % 5 === 0){
+//             console.log("FizzBuzz")
+//         } else if(i % 3 === 0){
+//             console.log("Fizz")
+//         } else if(i % 5 ===  0){
+//             console.log("Buzz")
+//         } else {
+//             console.log(i)
+//         }
+//     }
+// }
+
+// fizzBuzz();
+
+function verifySubstrs(mainStr, head, body, tail) {
+    if (mainStr.startsWith(head) && mainStr.includes(body) && mainStr.endsWith(tail)) {
+        return("My head, body, and tail.")
+    } else {
+        return("Incomplete")
     }
-    const sortedArr = arr.sort((a, b) => a - b);
-    return sortedArr;
 }
-console.log(sortNumsAscending([]));
+
+verifySubstrs("Onomatopeia", "on", "mato", "ia");
